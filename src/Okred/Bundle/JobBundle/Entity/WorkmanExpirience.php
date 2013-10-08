@@ -1,32 +1,30 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * WorkmanExpirience
+ * WorkmanExperience
  *
- * @ORM\Table(name="workman_expirience")
  * @ORM\Entity
+ * @ORM\Table(name="workman_experience")
  */
-class WorkmanExpirience
+class WorkmanExperience
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_expirience", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idExpirience;
+    private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_workman", type="integer", nullable=false)
+     * @ORM\Column(name="workman_id", type="integer", nullable=false)
      */
-    private $idWorkman;
+    private $workmanId;
 
     /**
      * @var string
@@ -52,9 +50,9 @@ class WorkmanExpirience
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_activity_sphere", type="integer", nullable=false)
+     * @ORM\Column(name="scope_id", type="integer", nullable=false)
      */
-    private $idActivitySphere;
+    private $scopeId;
 
     /**
      * @var string

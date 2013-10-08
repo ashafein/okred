@@ -33,6 +33,28 @@ abstract class BaseUser extends FOSUser implements UserInterface
     protected $updatedAt;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=200, nullable=true)
+     */
+    protected $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=200, nullable=true)
+     */
+    protected $password;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string", length=200, nullable=true)
+     */
+    protected $role;
+
+    /**
      * @var DateTime
      * @ORM\Column(name="date_of_birth", type="datetime", nullable=true)
      */
@@ -67,6 +89,42 @@ abstract class BaseUser extends FOSUser implements UserInterface
      * @ORM\Column(type="string", length=8, nullable=true)
      */
     protected $locale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="avatar", type="string", length=1024, nullable=true)
+     */
+    protected $avatar;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_country", type="integer", nullable=true)
+     */
+    protected $countryId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_city", type="integer", nullable=true)
+     */
+    protected $cityId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="state", type="integer", nullable=true)
+     */
+    private $state;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_visited_at", type="datetime", nullable=true)
+     */
+    private $lastVisitedAt;
 
     /**
      * @var string

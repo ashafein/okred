@@ -1,6 +1,5 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -15,18 +14,18 @@ class WorkmanHasEducation
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_workman_has_education", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idWorkmanHasEducation;
+    private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_workman", type="integer", nullable=false)
+     * @ORM\Column(name="workman_id", type="integer", nullable=false)
      */
-    private $idWorkman;
+    private $workmanID;
 
     /**
      * @var string
