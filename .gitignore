@@ -1,3 +1,4 @@
+/.idea
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -8,4 +9,9 @@
 /build/
 /vendor/
 /composer.phar
+<<<<<<< HEAD
 /.idea
+=======
+/build.properties
+/build.symfony.properties
+>>>>>>> master

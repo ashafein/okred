@@ -1,392 +1,118 @@
 <?php
+
 // src/Okred/Bundle/JobBundle/Entity/Company.php
 namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
- * @ORM\Entity()
- * @ORM\Table(name="fos_job_company")
+ * Company
+ *
+ * @ORM\Table(name="company")
+ * @ORM\Entity
  */
+
 class Company
 {
     /**
      * @var integer
-     * @ORM\Column(type="integer")
-     * @ORM\Id()
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $emloyer_id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $name;
-    /**
-     * @ORM\Column(type="integer")
-     */
-
-    protected $id_company_type;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $id_legal_type;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $staff;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $description;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $logo;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $slogan;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $phone;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $website;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $id_city;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $created_at;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $updated_at;
-    /**
-     * @return integer $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set emloyer_id
+     * @var integer
      *
-     * @param integer $emloyerId
-     * @return Company
+     * @ORM\Column(name="employer_id", type="integer", nullable=true)
      */
-    public function setEmloyerId($emloyerId)
-    {
-        $this->emloyer_id = $emloyerId;
-    
-        return $this;
-    }
+    private $employerId;
 
     /**
-     * Get emloyer_id
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
-    public function getEmloyerId()
-    {
-        return $this->emloyer_id;
-    }
+    private $name;
 
     /**
-     * Set name
+     * @var integer
      *
-     * @param string $name
-     * @return Company
+     * @ORM\Column(name="company_type_id", type="integer", nullable=true)
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
+    private $companyTypeId;
 
     /**
-     * Get name
+     * @var integer
      *
-     * @return string 
+     * @ORM\Column(name="legal_type_id", type="integer", nullable=true)
      */
-    public function getName()
-    {
-        return $this->name;
-    }
+    private $LegalTypeId;
 
     /**
-     * Set id_company_type
+     * @var integer
      *
-     * @param integer $idCompanyType
-     * @return Company
+     * @ORM\Column(name="staff", type="integer", nullable=true)
      */
-    public function setIdCompanyType($idCompanyType)
-    {
-        $this->id_company_type = $idCompanyType;
-    
-        return $this;
-    }
+    private $staff;
 
     /**
-     * Get id_company_type
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="description", type="string", length=1024, nullable=true)
      */
-    public function getIdCompanyType()
-    {
-        return $this->id_company_type;
-    }
+    private $description;
 
     /**
-     * Set id_legal_type
+     * @var string
      *
-     * @param integer $idLegalType
-     * @return Company
+     * @ORM\Column(name="logo", type="string", length=1024, nullable=true)
      */
-    public function setIdLegalType($idLegalType)
-    {
-        $this->id_legal_type = $idLegalType;
-    
-        return $this;
-    }
+    private $logo;
 
     /**
-     * Get id_legal_type
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="slogan", type="string", length=1024, nullable=true)
      */
-    public function getIdLegalType()
-    {
-        return $this->id_legal_type;
-    }
+    private $slogan;
 
     /**
-     * Set staff
+     * @var string
      *
-     * @param integer $staff
-     * @return Company
+     * @ORM\Column(name="phone", type="string", length=20, nullable=true)
      */
-    public function setStaff($staff)
-    {
-        $this->staff = $staff;
-    
-        return $this;
-    }
+    private $phone;
 
     /**
-     * Get staff
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="website", type="string", length=1024, nullable=true)
      */
-    public function getStaff()
-    {
-        return $this->staff;
-    }
+    private $website;
 
     /**
-     * Set description
+     * @var integer
      *
-     * @param string $description
-     * @return Company
+     * @ORM\Column(name="city_id", type="integer", nullable=true)
      */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    
-        return $this;
-    }
+    private $cityId;
 
     /**
-     * Get description
+     * @var \DateTime
      *
-     * @return string 
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+    private $createdAt;
 
     /**
-     * Set logo
+     * @var \DateTime
      *
-     * @param string $logo
-     * @return Company
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-    
-        return $this;
-    }
+    private $updatedAt;
 
-    /**
-     * Get logo
-     *
-     * @return string 
-     */
-    public function getLogo()
-    {
-        return $this->logo;
-    }
 
-    /**
-     * Set slogan
-     *
-     * @param string $slogan
-     * @return Company
-     */
-    public function setSlogan($slogan)
-    {
-        $this->slogan = $slogan;
-    
-        return $this;
-    }
-
-    /**
-     * Get slogan
-     *
-     * @return string 
-     */
-    public function getSlogan()
-    {
-        return $this->slogan;
-    }
-
-    /**
-     * Set phone
-     *
-     * @param string $phone
-     * @return Company
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-    
-        return $this;
-    }
-
-    /**
-     * Get phone
-     *
-     * @return string 
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    /**
-     * Set website
-     *
-     * @param string $website
-     * @return Company
-     */
-    public function setWebsite($website)
-    {
-        $this->website = $website;
-    
-        return $this;
-    }
-
-    /**
-     * Get website
-     *
-     * @return string 
-     */
-    public function getWebsite()
-    {
-        return $this->website;
-    }
-
-    /**
-     * Set id_city
-     *
-     * @param integer $idCity
-     * @return Company
-     */
-    public function setIdCity($idCity)
-    {
-        $this->id_city = $idCity;
-    
-        return $this;
-    }
-
-    /**
-     * Get id_city
-     *
-     * @return integer 
-     */
-    public function getIdCity()
-    {
-        return $this->id_city;
-    }
-
-    /**
-     * Set created_at
-     *
-     * @param \DateTime $createdAt
-     * @return Company
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->created_at = $createdAt;
-    
-        return $this;
-    }
-
-    /**
-     * Get created_at
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Set updated_at
-     *
-     * @param \DateTime $updatedAt
-     * @return Company
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updated_at = $updatedAt;
-    
-        return $this;
-    }
-
-    /**
-     * Get updated_at
-     *
-     * @return \DateTime 
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
 }
+

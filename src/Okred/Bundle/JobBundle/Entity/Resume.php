@@ -1,14 +1,17 @@
 <?php
+
 // src/Okred/Bundle/JobBundle/Entity/Resume.php
 namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
- * @ORM\Entity()
- * @ORM\Table(name="fos_job_resume")
+ * Company
+ *
+ * @ORM\Table(name="resume")
+ * @ORM\Entity
  */
+
 class Resume
 {
     /**
@@ -17,600 +20,170 @@ class Resume
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+
+    private $id;
 
     /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $workman_id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $name;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $birth_date;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $gender;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $residence;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $movement_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $business_trip_id;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $citizenship;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $job_allow;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $time_to_arrive;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $mail;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $phone;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $position_wanted;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $activity_sphere_id;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $salary;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $currency_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $employment_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $schedule_id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $additional_info;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $created_at;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $updated_at;
-    /**
-     * @return integer $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set workman_id
+     * @var integer
      *
-     * @param integer $workmanId
-     * @return Resume
+     * @ORM\Column(name="workman_id", type="integer", nullable=false)
      */
-    public function setWorkmanId($workmanId)
-    {
-        $this->workman_id = $workmanId;
-    
-        return $this;
-    }
+    private $workmanId;
 
     /**
-     * Get workman_id
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="name", type="string", length=200, nullable=true)
      */
-    public function getWorkmanId()
-    {
-        return $this->workman_id;
-    }
+    private $name;
 
     /**
-     * Set name
+     * @var boolean
      *
-     * @param string $name
-     * @return Resume
+     * @ORM\Column(name="avatar", type="boolean", nullable=true)
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
+    private $avatar;
 
     /**
-     * Get name
+     * @var boolean
      *
-     * @return string 
+     * @ORM\Column(name="birth_date", type="boolean", nullable=true)
      */
-    public function getName()
-    {
-        return $this->name;
-    }
+    private $birthDate;
 
     /**
-     * Set birth_date
+     * @var boolean
      *
-     * @param boolean $birthDate
-     * @return Resume
+     * @ORM\Column(name="gender", type="boolean", nullable=true)
      */
-    public function setBirthDate($birthDate)
-    {
-        $this->birth_date = $birthDate;
-    
-        return $this;
-    }
+    private $gender;
 
     /**
-     * Get birth_date
+     * @var boolean
      *
-     * @return boolean 
+     * @ORM\Column(name="residence", type="boolean", nullable=true)
      */
-    public function getBirthDate()
-    {
-        return $this->birth_date;
-    }
+    private $residence;
 
     /**
-     * Set gender
+     * @var integer
      *
-     * @param boolean $gender
-     * @return Resume
+     * @ORM\Column(name="movement_id", type="integer", nullable=false)
      */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    
-        return $this;
-    }
+    private $movementId;
 
     /**
-     * Get gender
+     * @var integer
      *
-     * @return boolean 
+     * @ORM\Column(name="business_trip_id", type="integer", nullable=false)
      */
-    public function getGender()
-    {
-        return $this->gender;
-    }
+    private $businessTripId;
 
     /**
-     * Set residence
+     * @var boolean
      *
-     * @param boolean $residence
-     * @return Resume
+     * @ORM\Column(name="citizenship", type="boolean", nullable=true)
      */
-    public function setResidence($residence)
-    {
-        $this->residence = $residence;
-    
-        return $this;
-    }
+    private $citizenship;
 
     /**
-     * Get residence
+     * @var boolean
      *
-     * @return boolean 
+     * @ORM\Column(name="job_allow", type="boolean", nullable=true)
      */
-    public function getResidence()
-    {
-        return $this->residence;
-    }
+    private $jobAllow;
 
     /**
-     * Set movement_id
+     * @var integer
      *
-     * @param integer $movementId
-     * @return Resume
+     * @ORM\Column(name="time_to_arrive", type="integer", nullable=true)
      */
-    public function setMovementId($movementId)
-    {
-        $this->movement_id = $movementId;
-    
-        return $this;
-    }
+    private $timeToArriveId;
 
     /**
-     * Get movement_id
+     * @var boolean
      *
-     * @return integer 
+     * @ORM\Column(name="email", type="boolean", nullable=true)
      */
-    public function getMovementId()
-    {
-        return $this->movement_id;
-    }
+    private $email;
 
     /**
-     * Set business_trip_id
+     * @var boolean
      *
-     * @param integer $businessTripId
-     * @return Resume
+     * @ORM\Column(name="phone", type="boolean", nullable=true)
      */
-    public function setBusinessTripId($businessTripId)
-    {
-        $this->business_trip_id = $businessTripId;
-    
-        return $this;
-    }
+    private $phone;
 
     /**
-     * Get business_trip_id
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="position_wanted", type="string", length=1024, nullable=true)
      */
-    public function getBusinessTripId()
-    {
-        return $this->business_trip_id;
-    }
+    private $positionWanted;
 
     /**
-     * Set citizenship
+     * @var integer
      *
-     * @param boolean $citizenship
-     * @return Resume
+     * @ORM\Column(name="scope_id", type="integer", nullable=false)
      */
-    public function setCitizenship($citizenship)
-    {
-        $this->citizenship = $citizenship;
-    
-        return $this;
-    }
+    private $scopeId;
 
     /**
-     * Get citizenship
+     * @var integer
      *
-     * @return boolean 
+     * @ORM\Column(name="salary", type="integer", nullable=true)
      */
-    public function getCitizenship()
-    {
-        return $this->citizenship;
-    }
+    private $salary;
 
     /**
-     * Set job_allow
+     * @var integer
      *
-     * @param boolean $jobAllow
-     * @return Resume
+     * @ORM\Column(name="currency_id", type="integer", nullable=false)
      */
-    public function setJobAllow($jobAllow)
-    {
-        $this->job_allow = $jobAllow;
-    
-        return $this;
-    }
+    private $currencyId;
 
     /**
-     * Get job_allow
+     * @var integer
      *
-     * @return boolean 
+     * @ORM\Column(name="employment_id", type="integer", nullable=false)
      */
-    public function getJobAllow()
-    {
-        return $this->job_allow;
-    }
+    private $employmentId;
 
     /**
-     * Set time_to_arrive
+     * @var integer
      *
-     * @param integer $timeToArrive
-     * @return Resume
+     * @ORM\Column(name="schedule_id", type="integer", nullable=false)
      */
-    public function setTimeToArrive($timeToArrive)
-    {
-        $this->time_to_arrive = $timeToArrive;
-    
-        return $this;
-    }
+    private $scheduleId;
 
     /**
-     * Get time_to_arrive
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="additional_info", type="string", length=1024, nullable=true)
      */
-    public function getTimeToArrive()
-    {
-        return $this->time_to_arrive;
-    }
+    private $additionalInfo;
 
     /**
-     * Set mail
+     * @var integer
      *
-     * @param string $mail
-     * @return Resume
+     * @ORM\Column(name="state", type="integer", nullable=true)
      */
-    public function setMail($mail)
-    {
-        $this->mail = $mail;
-    
-        return $this;
-    }
+    private $state;
 
     /**
-     * Get mail
+     * @var \DateTime
      *
-     * @return string 
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
-    public function getMail()
-    {
-        return $this->mail;
-    }
+    private $createdAt;
 
     /**
-     * Set phone
+     * @var \DateTime
      *
-     * @param string $phone
-     * @return Resume
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-    
-        return $this;
-    }
+    private $updatedAt;
 
-    /**
-     * Get phone
-     *
-     * @return string 
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
 
-    /**
-     * Set position_wanted
-     *
-     * @param string $positionWanted
-     * @return Resume
-     */
-    public function setPositionWanted($positionWanted)
-    {
-        $this->position_wanted = $positionWanted;
-    
-        return $this;
-    }
-
-    /**
-     * Get position_wanted
-     *
-     * @return string 
-     */
-    public function getPositionWanted()
-    {
-        return $this->position_wanted;
-    }
-
-    /**
-     * Set activity_sphere_id
-     *
-     * @param integer $activitySphereId
-     * @return Resume
-     */
-    public function setActivitySphereId($activitySphereId)
-    {
-        $this->activity_sphere_id = $activitySphereId;
-    
-        return $this;
-    }
-
-    /**
-     * Get activity_sphere_id
-     *
-     * @return integer 
-     */
-    public function getActivitySphereId()
-    {
-        return $this->activity_sphere_id;
-    }
-
-    /**
-     * Set salary
-     *
-     * @param integer $salary
-     * @return Resume
-     */
-    public function setSalary($salary)
-    {
-        $this->salary = $salary;
-    
-        return $this;
-    }
-
-    /**
-     * Get salary
-     *
-     * @return integer 
-     */
-    public function getSalary()
-    {
-        return $this->salary;
-    }
-
-    /**
-     * Set currency_id
-     *
-     * @param integer $currencyId
-     * @return Resume
-     */
-    public function setCurrencyId($currencyId)
-    {
-        $this->currency_id = $currencyId;
-    
-        return $this;
-    }
-
-    /**
-     * Get currency_id
-     *
-     * @return integer 
-     */
-    public function getCurrencyId()
-    {
-        return $this->currency_id;
-    }
-
-    /**
-     * Set employment_id
-     *
-     * @param integer $employmentId
-     * @return Resume
-     */
-    public function setEmploymentId($employmentId)
-    {
-        $this->employment_id = $employmentId;
-    
-        return $this;
-    }
-
-    /**
-     * Get employment_id
-     *
-     * @return integer 
-     */
-    public function getEmploymentId()
-    {
-        return $this->employment_id;
-    }
-
-    /**
-     * Set schedule_id
-     *
-     * @param integer $scheduleId
-     * @return Resume
-     */
-    public function setScheduleId($scheduleId)
-    {
-        $this->schedule_id = $scheduleId;
-    
-        return $this;
-    }
-
-    /**
-     * Get schedule_id
-     *
-     * @return integer 
-     */
-    public function getScheduleId()
-    {
-        return $this->schedule_id;
-    }
-
-    /**
-     * Set additional_info
-     *
-     * @param string $additionalInfo
-     * @return Resume
-     */
-    public function setAdditionalInfo($additionalInfo)
-    {
-        $this->additional_info = $additionalInfo;
-    
-        return $this;
-    }
-
-    /**
-     * Get additional_info
-     *
-     * @return string 
-     */
-    public function getAdditionalInfo()
-    {
-        return $this->additional_info;
-    }
-
-    /**
-     * Set created_at
-     *
-     * @param \DateTime $createdAt
-     * @return Resume
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->created_at = $createdAt;
-    
-        return $this;
-    }
-
-    /**
-     * Get created_at
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Set updated_at
-     *
-     * @param \DateTime $updatedAt
-     * @return Resume
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updated_at = $updatedAt;
-    
-        return $this;
-    }
-
-    /**
-     * Get updated_at
-     *
-     * @return \DateTime 
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
 }
+

@@ -1,14 +1,17 @@
 <?php
+
 // src/Okred/Bundle/JobBundle/Entity/Vacancy.php
 namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
- * @ORM\Entity()
- * @ORM\Table(name="fos_job_vacancy")
+ * Company
+ *
+ * @ORM\Table(name="vacancy")
+ * @ORM\Entity
  */
+
 class Vacancy
 {
     /**
@@ -17,432 +20,121 @@ class Vacancy
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+
+    private $id;
 
     /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $employer_id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $name;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $region_id;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $salary_from;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $salary_to;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $currency_id;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $expirience_id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $description;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $address;
-
-    /**
-     * @ORM\Column(type="bigint")
-     */
-    protected $activity_sphere_id;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $functions;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $education_lvl_id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $schedule;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $created_at;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $updated_at;
-    /**
-     * @return integer $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set employer_id
+     * @var integer
      *
-     * @param integer $employerId
-     * @return Vacancy
+     * @ORM\Column(name="employer_id", type="integer", nullable=false)
      */
-    public function setEmployerId($employerId)
-    {
-        $this->employer_id = $employerId;
-    
-        return $this;
-    }
+    private $mployerId;
 
     /**
-     * Get employer_id
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="name", type="string", length=200, nullable=false)
      */
-    public function getEmployerId()
-    {
-        return $this->employer_id;
-    }
+    private $name;
 
     /**
-     * Set name
+     * @var integer
      *
-     * @param string $name
-     * @return Vacancy
+     * @ORM\Column(name="region_id", type="integer", nullable=false)
      */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
+    private $regionId;
 
     /**
-     * Get name
+     * @var integer
      *
-     * @return string 
+     * @ORM\Column(name="salary_from", type="integer", nullable=true)
      */
-    public function getName()
-    {
-        return $this->name;
-    }
+    private $salaryFrom;
 
     /**
-     * Set region_id
+     * @var integer
      *
-     * @param integer $regionId
-     * @return Vacancy
+     * @ORM\Column(name="salary_to", type="integer", nullable=true)
      */
-    public function setRegionId($regionId)
-    {
-        $this->region_id = $regionId;
-    
-        return $this;
-    }
+    private $salaryTo;
 
     /**
-     * Get region_id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="currency_id", type="integer", nullable=true)
      */
-    public function getRegionId()
-    {
-        return $this->region_id;
-    }
+    private $urrencyId;
 
     /**
-     * Set salary_from
+     * @var integer
      *
-     * @param integer $salaryFrom
-     * @return Vacancy
+     * @ORM\Column(name="experience_id", type="integer", nullable=true)
      */
-    public function setSalaryFrom($salaryFrom)
-    {
-        $this->salary_from = $salaryFrom;
-    
-        return $this;
-    }
+    private $experienceId;
 
     /**
-     * Get salary_from
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="description", type="string", length=1024, nullable=true)
      */
-    public function getSalaryFrom()
-    {
-        return $this->salary_from;
-    }
+    private $description;
 
     /**
-     * Set salary_to
+     * @var string
      *
-     * @param integer $salaryTo
-     * @return Vacancy
+     * @ORM\Column(name="address", type="string", length=500, nullable=true)
      */
-    public function setSalaryTo($salaryTo)
-    {
-        $this->salary_to = $salaryTo;
-    
-        return $this;
-    }
+    private $address;
 
     /**
-     * Get salary_to
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="scope_id", type="integer", nullable=true)
      */
-    public function getSalaryTo()
-    {
-        return $this->salary_to;
-    }
+    private $scopeId;
 
     /**
-     * Set currency_id
+     * @var string
      *
-     * @param integer $currencyId
-     * @return Vacancy
+     * @ORM\Column(name="functions", type="string", length=1024, nullable=true)
      */
-    public function setCurrencyId($currencyId)
-    {
-        $this->currency_id = $currencyId;
-    
-        return $this;
-    }
+    private $functions;
 
     /**
-     * Get currency_id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="education_lvl_id", type="integer", nullable=true)
      */
-    public function getCurrencyId()
-    {
-        return $this->currency_id;
-    }
+    private $educationLvlId;
 
     /**
-     * Set expirience_id
+     * @var integer
      *
-     * @param integer $expirienceId
-     * @return Vacancy
+     * @ORM\Column(name="schedule_id", type="integer", length=500, nullable=true)
      */
-    public function setExpirienceId($expirienceId)
-    {
-        $this->expirience_id = $expirienceId;
-    
-        return $this;
-    }
+    private $scheduleId;
 
     /**
-     * Get expirience_id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="state", type="integer", nullable=true)
      */
-    public function getExpirienceId()
-    {
-        return $this->expirience_id;
-    }
+    private $state;
 
     /**
-     * Set description
+     * @var \DateTime
      *
-     * @param string $description
-     * @return Vacancy
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    
-        return $this;
-    }
+    private $createdAt;
 
     /**
-     * Get description
+     * @var \DateTime
      *
-     * @return string 
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+    private $updatedAt;
 
-    /**
-     * Set address
-     *
-     * @param string $address
-     * @return Vacancy
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-    
-        return $this;
-    }
 
-    /**
-     * Get address
-     *
-     * @return string 
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * Set activity_sphere_id
-     *
-     * @param integer $activitySphereId
-     * @return Vacancy
-     */
-    public function setActivitySphereId($activitySphereId)
-    {
-        $this->activity_sphere_id = $activitySphereId;
-    
-        return $this;
-    }
-
-    /**
-     * Get activity_sphere_id
-     *
-     * @return integer 
-     */
-    public function getActivitySphereId()
-    {
-        return $this->activity_sphere_id;
-    }
-
-    /**
-     * Set functions
-     *
-     * @param string $functions
-     * @return Vacancy
-     */
-    public function setFunctions($functions)
-    {
-        $this->functions = $functions;
-    
-        return $this;
-    }
-
-    /**
-     * Get functions
-     *
-     * @return string 
-     */
-    public function getFunctions()
-    {
-        return $this->functions;
-    }
-
-    /**
-     * Set education_lvl_id
-     *
-     * @param integer $educationLvlId
-     * @return Vacancy
-     */
-    public function setEducationLvlId($educationLvlId)
-    {
-        $this->education_lvl_id = $educationLvlId;
-    
-        return $this;
-    }
-
-    /**
-     * Get education_lvl_id
-     *
-     * @return integer 
-     */
-    public function getEducationLvlId()
-    {
-        return $this->education_lvl_id;
-    }
-
-    /**
-     * Set schedule
-     *
-     * @param integer $schedule
-     * @return Vacancy
-     */
-    public function setSchedule($schedule)
-    {
-        $this->schedule = $schedule;
-    
-        return $this;
-    }
-
-    /**
-     * Get schedule
-     *
-     * @return integer 
-     */
-    public function getSchedule()
-    {
-        return $this->schedule;
-    }
-
-    /**
-     * Set created_at
-     *
-     * @param \DateTime $createdAt
-     * @return Vacancy
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->created_at = $createdAt;
-    
-        return $this;
-    }
-
-    /**
-     * Get created_at
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Set updated_at
-     *
-     * @param \DateTime $updatedAt
-     * @return Vacancy
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updated_at = $updatedAt;
-    
-        return $this;
-    }
-
-    /**
-     * Get updated_at
-     *
-     * @return \DateTime 
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
 }
+

@@ -1,0 +1,14 @@
+sf.database_driver   = pdo_mysql
+sf.database_host     = 127.0.0.1
+sf.database_port     = ~
+sf.database_name     = okred
+sf.database_user     = okred
+sf.database_password = okred
+
+sf.mailer_transport = smtp
+sf.mailer_host      = 127.0.0.1
+sf.mailer_user      = ~
+sf.mailer_password  = ~
+
+sf.locale = ru
+sf.secret = NpfSZHU0BKwgbojjYX5V
