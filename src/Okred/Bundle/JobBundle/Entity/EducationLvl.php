@@ -1,25 +1,24 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EducationLvl
  *
- * @ORM\Table(name="education_lvl")
  * @ORM\Entity
+ * @ORM\Table(name="education_lvl")
  */
 class EducationLvl
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_education_lvl", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idEducationLvl;
+    private $id;
+
 
     /**
      * @var string

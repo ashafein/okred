@@ -1,46 +1,36 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Region
  *
- * @ORM\Table(name="region")
  * @ORM\Entity
+ * @ORM\Table(name="region")
  */
 class Region
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_region", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idRegion;
+    private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_country", type="integer", nullable=false)
+     * @ORM\Column(name="country_id", type="integer", nullable=false)
      */
-    private $idCountry;
+    private $countryId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="region_name_ru", type="string", length=255, nullable=false)
+     * @ORM\Column(name="region", type="string", length=255, nullable=false)
      */
-    private $regionNameRu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="region_name_en", type="string", length=255, nullable=false)
-     */
-    private $regionNameEn;
-
+    private $region;
 
 }

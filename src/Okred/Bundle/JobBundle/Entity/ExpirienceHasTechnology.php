@@ -1,34 +1,32 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ExpirienceHasTechnology
+ * Technology
  *
- * @ORM\Table(name="expirience_has_technology")
  * @ORM\Entity
+ * @ORM\Table(name="technology")
  */
-class ExpirienceHasTechnology
+class Technology
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_expirience", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idExpirience;
+    private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_technology", type="integer", nullable=false)
+     * @ORM\Column(name="technology_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $idTechnology;
+    private $technologyId;
 
 
 }

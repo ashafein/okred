@@ -1,22 +1,23 @@
 <?php
+namespace Okred\Bundle\JobBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * City
  *
- * @ORM\Table(name="city")
  * @ORM\Entity
+ * @ORM\Table(name="city")
  */
 class City
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_city", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idCity;
+    private $id;
 
     /**
      * @var string
@@ -28,9 +29,16 @@ class City
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_country", type="integer", nullable=false)
+     * @ORM\Column(name="region_id", type="integer", nullable=false)
      */
-    private $idCountry;
+    private $regionId;
 
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="country_id", type="integer", nullable=false)
+     */
+    private $countryId;
 
 }

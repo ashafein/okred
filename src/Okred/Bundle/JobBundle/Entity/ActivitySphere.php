@@ -6,15 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Область деятельности компании. Справочник.
  * @ORM\Entity
- * @ORM\Table(name="activity_sphere")
+ * @ORM\Table(name="scope")
  */
-class ActivitySphere
+class Scope
 {
     /**
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
