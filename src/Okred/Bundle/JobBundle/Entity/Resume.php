@@ -6,7 +6,7 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Company
+ * Resume
  *
  * @ORM\Table(name="resume")
  * @ORM\Entity

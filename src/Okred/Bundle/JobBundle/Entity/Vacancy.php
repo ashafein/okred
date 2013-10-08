@@ -6,7 +6,7 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Company
+ * Vacancy
  *
  * @ORM\Table(name="vacancy")
  * @ORM\Entity
@@ -28,7 +28,7 @@ class Vacancy
      *
      * @ORM\Column(name="employer_id", type="integer", nullable=false)
      */
-    private $mployerId;
+    private $employerId;
 
     /**
      * @var string
@@ -63,7 +63,7 @@ class Vacancy
      *
      * @ORM\Column(name="currency_id", type="integer", nullable=true)
      */
-    private $urrencyId;
+    private $currencyId;
 
     /**
      * @var integer
