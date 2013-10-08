@@ -1,0 +1,3 @@
+okred_job_home:
+    pattern:  /
+    defaults: { _controller: OkredJobBundle:Default:index }

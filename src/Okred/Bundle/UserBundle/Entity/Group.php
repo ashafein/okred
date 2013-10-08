@@ -2,13 +2,13 @@
 namespace Okred\Bundle\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Sonata\UserBundle\Entity\BaseUser as BaseUser;
+use Sonata\UserBundle\Entity\BaseGroup as BaseGroup;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="fos_user_user")
+ * @ORM\Table(name="fos_user_group")
  */
-class User extends BaseUser
+class Group extends BaseGroup
 {
     /**
      * @var integer
@@ -19,7 +19,9 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @return integer $id
+     * Get id
+     *
+     * @return integer
      */
     public function getId()
     {
