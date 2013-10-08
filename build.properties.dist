@@ -1,0 +1,3 @@
+dev_environment=true
+symfony.environment=dev
+composer.exec=${user.home}/bin/composer.phar

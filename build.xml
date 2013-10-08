@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Okred.Job" default="info">
+    <property name="propfile.main" value="${project.basedir}/build.properties"/>
+    <property name="propfile.symfony" value="${project.basedir}/build.symfony.properties"/>
+    <if>
+        <or>
+            <not>
+                <available file="${propfile.main}"/>
+            </not>
+            <not>
+                <available file="${propfile.symfony}"/>
+            </not>
+        </or>
+        <then>
+            <fail message="Required files not found! (${propfile.main}, ${propfile.symfony})"/>
+        </then>
+    </if>
+    <property file="build.properties"/>
+    <property file="build.symfony.properties"/>
+    <resolvepath propertyName="symlink_path" file="${project.basedir}/../current"/>
+
+    <target name="info" hidden="true">
+        <echo message="Please look at target list 'phing -l' and specify required."/>
+    </target>
+
+    <target name="build"
+            depends="cleanup,propgen,composer,sf:cache:clear"
+            description="Build the OKRED project">
+        <if>
+            <istrue value="${dev_environment}"/>
+            <then>
+                <phingcall target="sf:assets:install"/>
+            </then>
+            <else>
+                <phingcall target="sf:assetic:dump"/>
+            </else>
+        </if>
+    </target>
+
+    <target name="propgen"
+            description="Generates an 'app/config/properties.yml' file">
+        <php function="uniqid" returnProperty="assets_uid"/>
+        <tstamp>
+            <format property="build_tstamp" pattern="%Y-%m-%d@%H:%M:%S"/>
+        </tstamp>
+        <copy file="${project.basedir}/app/config/parameters.yml.dist"
+              tofile="${project.basedir}/app/config/parameters.yml"
+              overwrite="true"
+              haltonerror="true">
+            <filterchain>
+                <expandproperties/>
+                <replacetokens begintoken="##" endtoken="##">
+                    <token key="assets_version" value="${assets_uid}"/>
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="composer" hidden="true">
+        <Composer command="selfupdate" composer="${composer.exec}"/>
+        <if>
+            <istrue value="${dev_environment}"/>
+            <then>
+                <Composer command="install" composer="${composer.exec}"/>
+            </then>
+            <else>
+                <Composer command="install" composer="${composer.exec}">
+                    <arg value="--no-dev"/>
+                </Composer>
+            </else>
+        </if>
+    </target>
+
+    <target name="cleanup"
+            description="Removes all assets, caches, logs, etc">
+        <delete verbose="true" failonerror="true" includeemptydirs="true">
+            <fileset dir="${project.basedir}/web">
+                <include name="bundles/**"/>
+                <include name="js/**"/>
+                <include name="css/**"/>
+                <include name="images/**"/>
+                <exclude name="**/.gitkeep"/>
+            </fileset>
+            <fileset dir="${project.basedir}/app">
+                <include name="cache/**"/>
+                <include name="logs/**"/>
+                <exclude name="**/.gitkeep"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="sf:cache:clear" depends="cleanup" hidden="true">
+        <SymfonyConsole command="cache:clear">
+            <arg name="env" value="${symfony.environment}"/>
+        </SymfonyConsole>
+    </target>
+
+    <target name="sf:assets:install" hidden="true">
+        <SymfonyConsole command="assets:install">
+            <arg name="env" value="${symfony.environment}"/>
+        </SymfonyConsole>
+    </target>
+
+    <target name="sf:assetic:dump" depends="sf:assets:install" hidden="true">
+        <SymfonyConsole command="assetic:dump">
+            <arg name="env" value="${symfony.environment}"/>
+        </SymfonyConsole>
+    </target>
+</project>

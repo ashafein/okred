@@ -1,15 +1,17 @@
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     symfony
-    database_user:     root
-    database_password: ~
+    database_driver:   ${sf.database_driver}
+    database_host:     ${sf.database_host}
+    database_port:     ${sf.database_port}
+    database_name:     ${sf.database_name}
+    database_user:     ${sf.database_user}
+    database_password: ${sf.database_password}
 
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
+    mailer_transport:  ${sf.mailer_transport}
+    mailer_host:       ${sf.mailer_host}
+    mailer_user:       ${sf.mailer_user}
+    mailer_password:   ${sf.mailer_password}
 
-    locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    locale:            ${sf.locale}
+    secret:            ${sf.secret}
+    assets_version:    ${assets_uid}
+    build_tstamp:      ${build_tstamp}
