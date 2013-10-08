@@ -88,3 +88,6 @@ sonata_user:
     class:
         user:  Okred\Bundle\UserBundle\Entity\User
         group: Okred\Bundle\UserBundle\Entity\Group
+    admin:
+        user:
+            class: Okred\Bundle\UserBundle\Admin\Entity\UserAdmin
