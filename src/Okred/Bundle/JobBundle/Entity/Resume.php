@@ -16,7 +16,11 @@ class Resume
 {
     /**
      *
-
+     * @OneToOne(targetEntity="User")
+     * @JoinColumn(name="workman_id", referencedColumnName="id")
+     *
+     *
+     *
      *
      * @var integer
      * @ORM\Column(type="bigint")

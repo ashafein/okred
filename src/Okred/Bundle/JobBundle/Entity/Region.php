@@ -18,6 +18,7 @@ class Region
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="region")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      *
+     *
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
