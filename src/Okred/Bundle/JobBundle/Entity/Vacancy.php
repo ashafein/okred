@@ -20,9 +20,6 @@ class Vacancy
      * @ORM\JoinColumn(name="employer_id", referencedColumnName="id")
      *
      * @ORM\ManyToMany(targetEntity="Technology")
-     * @ORM\JoinTable(name="vacancy_technology",
-     * joinColumns={@ORM\JoinColumn(name="vacancy_id", referencedColumnName="id")},
-     * inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")}
      *
      * @var integer
      * @ORM\Column(type="bigint")

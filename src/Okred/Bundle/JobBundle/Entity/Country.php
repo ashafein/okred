@@ -14,8 +14,15 @@ class Country
 {
     /**
      * @ORM\OneToMany(targetEntity="City", mappedBy="country")
+     */
+    private $city;
+
+    /**
      * @ORM\OneToMany(targetEntity="Region", mappedBy="country")
-     *
+     */
+    private $region;
+
+    /**
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id

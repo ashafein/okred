@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="user_has_company")
  */
-class UserHasCompany
+class UserCompany
 {
     /**
      * @var integer

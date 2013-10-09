@@ -16,8 +16,8 @@ class Resume
 {
     /**
      *
-     * @OneToOne(targetEntity="User")
-     * @JoinColumn(name="workman_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
      *
      *
      *

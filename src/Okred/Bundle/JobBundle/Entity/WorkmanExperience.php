@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="workman_experience")
  */
-class Schedule
+class WorkmanExperience
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class Schedule
     /**
      * @var string
      *
-     * @ORM\Column(name="company_name", type="string", length=200, nullable=true)
+     * @ORM\Column(name="website", type="string", length=200, nullable=true)
      */
     private $website;
 

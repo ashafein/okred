@@ -15,10 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Company
 {
-
-
     /**
-     *
      *
      *
      * @var integer

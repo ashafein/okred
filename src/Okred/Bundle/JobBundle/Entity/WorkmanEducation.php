@@ -4,7 +4,7 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * WorkmanHasEducation
+ * WorkmanEducation
  *
  * @ORM\Table(name="workman_has_education")
  * @ORM\Entity

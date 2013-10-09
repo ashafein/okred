@@ -16,10 +16,18 @@ class City
      *
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="city")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
-     *
+     */
+
+    private $country;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Region", inversedBy="city")
      * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
-     *
+     */
+
+    private $region;
+
+    /**
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
