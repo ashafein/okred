@@ -18,7 +18,6 @@ class DebugController extends Controller
         }
 
         $now = new DateTime();
-
         /** @var Swift_Mailer $mailer */
         $mailer = $this->get('mailer');
         /** @var Swift_Mime_Message $message */
@@ -39,6 +38,10 @@ class DebugController extends Controller
 
     public function renderViewAction($template)
     {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw $this->createNotFoundException();
+        }
+
         return $this->render($template);
     }
 }
