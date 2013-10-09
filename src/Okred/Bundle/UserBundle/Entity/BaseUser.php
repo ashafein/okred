@@ -35,16 +35,11 @@ abstract class BaseUser extends FOSUser implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=200, nullable=true)
+     * @ORM\Column(name="mail", type="string", length=200, nullable=true)
      */
-    protected $email;
+    protected $mail;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=200, nullable=true)
-     */
-    protected $password;
+
 
 
     /**
