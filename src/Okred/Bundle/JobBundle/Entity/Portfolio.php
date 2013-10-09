@@ -13,20 +13,27 @@ use Doctrine\ORM\Mapping as ORM;
 class Portfolio
 {
     /**
+     *
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     *
+     *
      * @var integer
      *
-     * @ORM\Column(name="id_portfolio", type="integer", nullable=false)
+     * @ORM\Column(name="portfolio_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idPortfolio;
+    private $portfolioId;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_workman", type="integer", nullable=false)
+     * @ORM\Column(name="workman_id", type="integer", nullable=false)
      */
-    private $idWorkman;
+    private $workman_id;
 
     /**
      * @var string

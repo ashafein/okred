@@ -8,10 +8,18 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity
  * @ORM\Table(name="city")
+ *
  */
 class City
 {
     /**
+     *
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="city")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     *
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="city")
+     * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     *
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id

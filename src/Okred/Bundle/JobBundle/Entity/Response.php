@@ -8,10 +8,20 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity
  * @ORM\Table(name="response")
+ *
+ *
+ *
  */
 class Response
 {
     /**
+     *
+     * @ORM\ManyToOne(targetEntity="Resume")
+     * @ORM\JoinColumn(name="resume_id", referencedColumnName="id")
+     *
+     * @ORM\ManyToOne(targetEntity="Vacancy")
+     * @ORM\JoinColumn(name="vacancy_id", referencedColumnName="id")
+     *
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id

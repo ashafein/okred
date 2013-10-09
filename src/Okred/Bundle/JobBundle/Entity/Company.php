@@ -10,11 +10,17 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="company")
  * @ORM\Entity
+ *
  */
 
 class Company
 {
+
+
     /**
+     *
+     *
+     *
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -25,9 +31,9 @@ class Company
     /**
      * @var integer
      *
-     * @ORM\Column(name="employer_id", type="integer", nullable=true)
+     * @ORM\Column(name="owner_id", type="integer", nullable=true)
      */
-    private $employerId;
+    private $OwnerId;
 
     /**
      * @var string

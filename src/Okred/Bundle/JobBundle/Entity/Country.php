@@ -8,10 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity
  * @ORM\Table(name="country")
+ *
  */
 class Country
 {
     /**
+     * @ORM\OneToMany(targetEntity="City", mappedBy="country")
+     * @ORM\OneToMany(targetEntity="Region", mappedBy="country")
+     *
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
