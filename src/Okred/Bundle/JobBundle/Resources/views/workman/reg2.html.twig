@@ -1,0 +1,176 @@
+{% extends "OkredBundle::layout.html.twig" %}
+{% block title %}Регистрация соискателя{% endblock %}
+{% block stylesheets %}
+		<link href="css/reset.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/fonts.css" rel="stylesheet" media="screen">
+		<link href="css/registration.css" rel="stylesheet" media="screen">
+		<link href="css/workman1.css" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block registration %}
+	<div id="registration" class="container-fluid">
+		<h1>Регистрация соискателя</h1>
+		<a></a>
+	</div>
+{% endblock %}
+	
+{% block content %}
+	<div id="workman-scale">
+		<img src="img/workman-scale.png" alt="workman-scale" />
+		<ul>
+			<li>
+				<span>Создание</span>
+				<span>учетной записи</span>
+			</li>
+			<li>
+				<span>Личные</span>
+				<span>данные</span>
+			</li>
+			<li>
+				<span>Образование и</span>
+				<span>навыки</span>
+			</li>
+			<li>
+				<span>Опыт</span>
+				<span>работы</span>
+			</li>
+			<li>
+				<span>Желаемые</span>
+				<span>условия</span>
+			</li>
+		</ul>
+	</div>
+	<form id="reg-fields" class="container-fluid">
+		<fieldset> 
+		<div id="personal-info" class="continue">
+				<div class="user-type clearfix">
+					<div class="name">Итак,&nbsp;<span> Даамиан Юрьевич </span>, продолжим</div>
+					<span style="margin-left: 0px;">Вы</span>
+					<label class="radio">
+						<input type="radio" name="type" value="employer">
+						<span class="type">Мужчина</span>
+					</label>
+					<span>или</span>
+					<label class="radio">
+						<input type="radio" name="type" value="workman">
+						<span class="type">Женщина</span>
+						<span class="type">?</span>
+					</label>
+					<div class="birth">
+							<div class="select-area">
+								<span class="caption">День рождения</span>
+								 <select class="selectpicker">
+									{% for i in 15..99 %}
+										<option>{{i}}</option>
+									{% endfor %}
+								</select>
+								 <select class="selectpicker">
+									 {% for month in months %}
+									<li>{{ month.months }}</li>
+									{% endfor %}
+								</select>
+								 <select class="selectpicker">
+									{% for i in 1980..2013 %}
+										<option>{{i}}</option>
+									{% endfor %}
+								</select>
+							</div>
+					</div>
+				</div>
+		</div>
+		<div id="contact-info" class="photo-info">
+			<label>Фотография</label>
+			<div class="row-fluid">
+				<div class="sidebar-a span4">
+					<img src="img/example.png" alt="photo"/>
+					<span class="edit">Редактировать</span>
+					<span class="delete">Удалить</span>
+				</div>
+				<div class="sidebar-b span8">
+					<input type="file"/>
+					<span class="allow-formats">
+						Допустимые форматы .jpeg .png .gif
+					</span>
+					<button class="btn download">загрузить</button>
+					<span class="success">
+						успешно загружено
+					</span>
+				</div>
+			</div>
+		</div>
+		<div id="private-info">
+			<legend>Территориальная информация</legend>
+			<label>Гражданство</label>
+			<select class="selectpicker">
+				<option>РФ</option>
+				<option>Другое</option>
+			</select>
+			<label>Место проживания</label>
+			<select class="selectpicker">
+				<option>Московская область</option>
+				<option>Другое</option>
+			</select>
+			<label>Разрешение на работу</label>
+			<select class="selectpicker">
+				<option>РФ</option>
+				<option>Другое</option>
+			</select>
+		</div>
+		<div id="private-info">
+			<legend>Контактная информация</legend>
+			<label>Телефоны</label>
+			<div class="input-box">
+				<div class="input">
+					<input type="text" placeholder="+7 (916) 514-06-05">
+					<div class="check"></div>
+				</div>
+			</div>
+			<a href="#">Добавить еще один</a>
+			<label>
+				<input type="radio" name="type">
+				<span>желаемый способ связи</span>
+			</label>
+			<label>Электропочта</label>
+			<div class="input-box">
+				<div class="input">
+					<input type="text" placeholder="stereo.sherber@gmail.com">
+					<div class="check true"></div>
+				</div>
+				<span class="alert alert-color1">Красивое имя :)</span>
+			</div>
+			<label>
+				<input type="radio" name="type">
+				<span>желаемый способ связи</span>
+			</label>
+			<label>Скайп</label>
+			<div class="input-box">
+				<div class="input">
+					<input type="text" placeholder="ya.dzeen">
+					<div class="check true"></div>
+				</div>
+				<span class="alert alert-color1">Красивое имя :)</span>
+			</div>
+			<label>
+				<input type="radio" name="type">
+				<span>желаемый способ связи</span>
+			</label>
+							<div class="select-area">
+								<span class="caption">Социальные сети</span>
+								 <select class="selectpicker">
+									<option>Вк</option>
+									<option>другая</option>
+								</select>
+								<input type="text" class="social-name" name="social-name" placeholder="sherber"/>
+							</div>
+		</div>
+		
+		<div class="system-msg">
+			
+			<span><div class="ok"></div>ок, вроде все впорядке, теперь можно</span>
+		</div>
+		
+		<button type="submit" class="btn">Создать учетную запись соискателя</button>
+		</fieldset>
+	</form>
+{% endblock %}
