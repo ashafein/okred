@@ -1,0 +1,74 @@
+#workman-scale {
+	margin: 47px 0 80px;
+}
+#workman-scale > ul {
+	margin: 0;
+}
+#workman-scale > ul li {
+	font-family: RobotoBold;
+	font-size: 9px;
+	color: #444444;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	line-height: 12px;
+	margin: 0 95px 0 0px;
+}
+#workman-scale > ul li >span {
+	display: block;
+	text-align: center;
+}
+.continue {
+	min-height: 285px;
+	*height: 285px;
+	zoom: 1;\
+	position: relative;
+}
+.continue  div.name {
+	display: block;
+	padding: 40px 0;
+	font-family: RobotoRegular;
+	font-size: 20px;
+	color: #444444;
+}
+	.continue  div.name > span {
+		font-family: RobotoBold;
+	}
+span.caption {
+	font-family: RobotoMedium;
+	display: block;
+	font-size: 16px;
+	color: #444444;
+}
+.select-area {
+	padding: 40px 0;
+}
+.select-area>select {
+	width: auto !important;
+	min-width: 80px;
+	margin-top: 15px;
+}
+
+.sidebar-a > img, .sidebar-a > .edit, .sidebar-a > .delete {
+	display: block;
+}
+.sidebar-a > .edit,.sidebar-a > .delete ,.sidebar-b > .allow-formats , .sidebar-b > .success{
+	font-family: RobotoRegular;
+	font-size: 10px;
+	line-height: 24px;
+	color: #b3b5b7;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+.sidebar-b > .allow-formats, .sidebar-b > .success {
+	text-decoration: none;
+	display: block;
+}
+.download {
+	margin-top: 50px;
+}
+.social-name {
+	margin-top: 15px;
+}

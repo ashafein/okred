@@ -1,0 +1,233 @@
+html, body {
+	min-height:100%;
+	height:auto !important;
+	height:100%;
+	background: url(../img/registration-bg.jpg);
+}
+h1 {
+	margin: 0;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 25px;
+}
+#main-wrapper {
+	width: 1000px;
+	min-height: 1000px;
+}
+	#main-column, #extra-column {
+		margin-top: 120px;
+		min-height: 1000px;
+		border-radius: 1px;
+	}
+	#main-column {
+		width: 75.5%;
+		height: 100%;
+		float: left;
+	}
+		#registration, #personal-info, #contact-info, #private-info {
+			background: #fff;
+			padding: 0;
+			-webkit-box-shadow: 3px 3px 4px rgba(231, 230, 210, 0.75);
+			-moz-box-shadow:    3px 3px 4px rgba(231, 230, 210, 0.75);
+			box-shadow:         3px 3px 4px rgba(231, 230, 210, 0.75);
+			-webkit-border-radius: 1px;
+			-moz-border-radius: 1px;
+			border-radius: 1px;
+			padding: 0 25px;
+		}
+		#personal-info, #contact-info, #private-info {
+			margin-bottom: 34px;
+			padding-bottom: 45px;
+		}
+		#registration {
+			height: 82px;
+			border-left: 4px solid #00c4c0;
+			
+		}
+			#registration  h1, #registration  a {
+				line-height: 82px;
+				display: inline;
+				color: #444444;
+				font-family: Arial;
+			}
+			#registration  h1{
+				text-transform: uppercase;
+			}
+			#registration  a{
+				font-size: 16px;
+				text-decoration: underline;
+				cursor: pointer;
+				margin-left: 258px;
+			}
+			#registration  a:hover {
+				text-decoration: none;
+			}
+		
+		
+		
+	#extra-column {
+		width: 24.5%;
+		float: left;
+	}
+		#reg-fields{
+			margin-top: 67px;
+			padding: 0;
+		}
+			#reg-fields legend, #reg-fields label {
+				color: #444444;
+				font-size: 16px;
+				margin: 0;
+			}
+			#reg-fields legend {
+				font-family: RobotoRegular;
+				text-transform: uppercase;
+				margin-bottom: 16px;
+				border: 0;
+				line-height: 58px;
+			}
+			#reg-fields label {
+				font-family: RobotoMedium;
+				line-height: 32px;
+			}
+			#reg-fields  .user-type {
+				margin-top: 17px;
+			}
+				#reg-fields  .user-type>span {
+					font-family: RobotoRegular;
+					font-size: 16px;
+					color: #444444;
+					margin: 0 10px;
+				}
+				#reg-fields  .user-type>label.radio {
+					display: inline-block;
+					padding: 0;
+				}
+					#reg-fields  .user-type>label.radio>input {
+						margin: 9px 3px 10px;
+					}
+					#reg-fields  .user-type>label.radio>span {
+						font-size: 14px;
+						color: #b4b4b4;
+					}
+					#reg-fields  .user-type>label.radio>span.type {
+						font-family: RobotoBold;
+						color: #444444;
+					}
+			#reg-fields .input-box{
+				display: inline-block;
+				zoom: 1;
+				*display: inline;
+				margin-bottom: 33px;
+			}
+				#reg-fields .input-box .input, #reg-fields .input-box>span.alert {
+					display: inline-block;
+					zoom: 1;
+					*display: inline;
+					vertical-align: middle;
+					margin: 0;
+					position: relative;
+
+				}
+				#reg-fields .input-box .input>input {
+					height: 30px;
+					border-radius: 0;
+					border: 1px solid #fdf9e5;
+					outline: 0;
+					width: 354px;
+					background: #edf0f2;
+					padding: 5px 30px 5px 10px;
+					margin: 0;
+					margin: 0;
+					font-family: RobotoRegular;
+					font-size: 16px;
+					color: #444444;
+				}
+				.ok, .check {
+					width: 20px;
+					height: 20px;
+				}
+				.check {
+					position: absolute;
+					right: 10px;
+					top: 10px;
+				}
+				#reg-fields .input-box .input>.help {
+					position: absolute;
+					right: 10px;
+					top: 10px;
+					width: 20px;
+					height: 20px;
+				}
+					#reg-fields .input-box .input>.true {
+						background: url(../img/reg-sprite.png);
+						background-position: -6px -5px;
+					}
+					#reg-fields .input-box .input>.false {
+						background: url(../img/reg-sprite.png);
+						background-position: -34px -5px;
+					}
+				#reg-fields .input-box input:focus {
+					box-shadow: none;
+					opacity: 0.7;
+					border-left: 1px solid #00c4c0;
+				}
+				#reg-fields .input-box>span.alert {
+					display: none;
+					font-family: Arial;
+					font-size: 16px;
+					color: #fff;
+					text-shadow: none;
+					border: 0;
+					border-radius: 0;
+					padding: 0 43px;
+					margin-left: 5px;
+					line-height: 40px;
+				}
+				#reg-fields .input-box>span.help {
+					display: inline-block;
+					zoom: 1;
+					*display: inline;
+					line-height: 40px;
+				
+					font-family: Arial;
+					font-size: 15px;
+					color: #adadad;
+				}
+				#reg-fields .input-box>span.phone {
+					text-decoration: underline;
+				}
+				#reg-fields .input-box>span.notice {
+					color: #bdbdbd;
+				}
+				#reg-fields .input-box>span.alert-color1 {
+					background: #00c4c0;
+				}
+				#reg-fields .input-box>span.alert-color2 {
+					background: #f0d43d;
+				}
+				#reg-fields .input-box>span.alert-color3 {
+					background: #ff8888;
+				}
+				#reg-fields .input-box>span.enable {
+					display: inline-block;
+					zoom: 1;
+					*display: inline;
+				}
+				
+				
+		.system-msg {
+			position: relative;
+			margin: 0 auto;
+			
+		}
+		.system-msg>span {
+			font-family: RobotoRegular;
+			color: #797979;
+			font-size: 13px;
+			padding-left: 20px;
+		}
+		.system-msg div.ok {
+			/* position: absolute;
+			left:0; */
+			background: url("../img/reg-sprite.png") repeat scroll -6px -5px rgba(0, 0, 0, 0);
+		}
