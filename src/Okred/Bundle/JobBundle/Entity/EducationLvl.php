@@ -35,4 +35,60 @@ class EducationLvl
     private $visible;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set educationLvl
+     *
+     * @param string $educationLvl
+     * @return EducationLvl
+     */
+    public function setEducationLvl($educationLvl)
+    {
+        $this->educationLvl = $educationLvl;
+
+        return $this;
+    }
+
+    /**
+     * Get educationLvl
+     *
+     * @return string 
+     */
+    public function getEducationLvl()
+    {
+        return $this->educationLvl;
+    }
+
+    /**
+     * Set visible
+     *
+     * @param boolean $visible
+     * @return EducationLvl
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+
+        return $this;
+    }
+
+    /**
+     * Get visible
+     *
+     * @return boolean 
+     */
+    public function getVisible()
+    {
+        return $this->visible;
+    }
 }

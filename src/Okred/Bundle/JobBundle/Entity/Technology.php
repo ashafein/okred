@@ -27,4 +27,37 @@ class Technology
     private $technology;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set technology
+     *
+     * @param string $technology
+     * @return Technology
+     */
+    public function setTechnology($technology)
+    {
+        $this->technology = $technology;
+
+        return $this;
+    }
+
+    /**
+     * Get technology
+     *
+     * @return string 
+     */
+    public function getTechnology()
+    {
+        return $this->technology;
+    }
 }

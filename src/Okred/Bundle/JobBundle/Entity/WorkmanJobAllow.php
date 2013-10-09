@@ -30,4 +30,50 @@ class WorkmanJobAllow
     private $countryId;
 
 
+
+    /**
+     * Set workmanId
+     *
+     * @param integer $workmanId
+     * @return WorkmanJobAllow
+     */
+    public function setWorkmanId($workmanId)
+    {
+        $this->workmanId = $workmanId;
+
+        return $this;
+    }
+
+    /**
+     * Get workmanId
+     *
+     * @return integer 
+     */
+    public function getWorkmanId()
+    {
+        return $this->workmanId;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     * @return WorkmanJobAllow
+     */
+    public function setCountryId($countryId)
+    {
+        $this->countryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer 
+     */
+    public function getCountryId()
+    {
+        return $this->countryId;
+    }
 }

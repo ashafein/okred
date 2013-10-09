@@ -185,5 +185,543 @@ class Resume
     private $updatedAt;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set workmanId
+     *
+     * @param integer $workmanId
+     * @return Resume
+     */
+    public function setWorkmanId($workmanId)
+    {
+        $this->workmanId = $workmanId;
+
+        return $this;
+    }
+
+    /**
+     * Get workmanId
+     *
+     * @return integer 
+     */
+    public function getWorkmanId()
+    {
+        return $this->workmanId;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Resume
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set avatar
+     *
+     * @param boolean $avatar
+     * @return Resume
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get avatar
+     *
+     * @return boolean 
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * Set birthDate
+     *
+     * @param boolean $birthDate
+     * @return Resume
+     */
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return boolean 
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param boolean $gender
+     * @return Resume
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return boolean 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set residence
+     *
+     * @param boolean $residence
+     * @return Resume
+     */
+    public function setResidence($residence)
+    {
+        $this->residence = $residence;
+
+        return $this;
+    }
+
+    /**
+     * Get residence
+     *
+     * @return boolean 
+     */
+    public function getResidence()
+    {
+        return $this->residence;
+    }
+
+    /**
+     * Set movementId
+     *
+     * @param integer $movementId
+     * @return Resume
+     */
+    public function setMovementId($movementId)
+    {
+        $this->movementId = $movementId;
+
+        return $this;
+    }
+
+    /**
+     * Get movementId
+     *
+     * @return integer 
+     */
+    public function getMovementId()
+    {
+        return $this->movementId;
+    }
+
+    /**
+     * Set businessTripId
+     *
+     * @param integer $businessTripId
+     * @return Resume
+     */
+    public function setBusinessTripId($businessTripId)
+    {
+        $this->businessTripId = $businessTripId;
+
+        return $this;
+    }
+
+    /**
+     * Get businessTripId
+     *
+     * @return integer 
+     */
+    public function getBusinessTripId()
+    {
+        return $this->businessTripId;
+    }
+
+    /**
+     * Set citizenship
+     *
+     * @param boolean $citizenship
+     * @return Resume
+     */
+    public function setCitizenship($citizenship)
+    {
+        $this->citizenship = $citizenship;
+
+        return $this;
+    }
+
+    /**
+     * Get citizenship
+     *
+     * @return boolean 
+     */
+    public function getCitizenship()
+    {
+        return $this->citizenship;
+    }
+
+    /**
+     * Set jobAllow
+     *
+     * @param boolean $jobAllow
+     * @return Resume
+     */
+    public function setJobAllow($jobAllow)
+    {
+        $this->jobAllow = $jobAllow;
+
+        return $this;
+    }
+
+    /**
+     * Get jobAllow
+     *
+     * @return boolean 
+     */
+    public function getJobAllow()
+    {
+        return $this->jobAllow;
+    }
+
+    /**
+     * Set timeToArriveId
+     *
+     * @param integer $timeToArriveId
+     * @return Resume
+     */
+    public function setTimeToArriveId($timeToArriveId)
+    {
+        $this->timeToArriveId = $timeToArriveId;
+
+        return $this;
+    }
+
+    /**
+     * Get timeToArriveId
+     *
+     * @return integer 
+     */
+    public function getTimeToArriveId()
+    {
+        return $this->timeToArriveId;
+    }
+
+    /**
+     * Set email
+     *
+     * @param boolean $email
+     * @return Resume
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return boolean 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param boolean $phone
+     * @return Resume
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return boolean 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set positionWanted
+     *
+     * @param string $positionWanted
+     * @return Resume
+     */
+    public function setPositionWanted($positionWanted)
+    {
+        $this->positionWanted = $positionWanted;
+
+        return $this;
+    }
+
+    /**
+     * Get positionWanted
+     *
+     * @return string 
+     */
+    public function getPositionWanted()
+    {
+        return $this->positionWanted;
+    }
+
+    /**
+     * Set scopeId
+     *
+     * @param integer $scopeId
+     * @return Resume
+     */
+    public function setScopeId($scopeId)
+    {
+        $this->scopeId = $scopeId;
+
+        return $this;
+    }
+
+    /**
+     * Get scopeId
+     *
+     * @return integer 
+     */
+    public function getScopeId()
+    {
+        return $this->scopeId;
+    }
+
+    /**
+     * Set salary
+     *
+     * @param integer $salary
+     * @return Resume
+     */
+    public function setSalary($salary)
+    {
+        $this->salary = $salary;
+
+        return $this;
+    }
+
+    /**
+     * Get salary
+     *
+     * @return integer 
+     */
+    public function getSalary()
+    {
+        return $this->salary;
+    }
+
+    /**
+     * Set currencyId
+     *
+     * @param integer $currencyId
+     * @return Resume
+     */
+    public function setCurrencyId($currencyId)
+    {
+        $this->currencyId = $currencyId;
+
+        return $this;
+    }
+
+    /**
+     * Get currencyId
+     *
+     * @return integer 
+     */
+    public function getCurrencyId()
+    {
+        return $this->currencyId;
+    }
+
+    /**
+     * Set employmentId
+     *
+     * @param integer $employmentId
+     * @return Resume
+     */
+    public function setEmploymentId($employmentId)
+    {
+        $this->employmentId = $employmentId;
+
+        return $this;
+    }
+
+    /**
+     * Get employmentId
+     *
+     * @return integer 
+     */
+    public function getEmploymentId()
+    {
+        return $this->employmentId;
+    }
+
+    /**
+     * Set scheduleId
+     *
+     * @param integer $scheduleId
+     * @return Resume
+     */
+    public function setScheduleId($scheduleId)
+    {
+        $this->scheduleId = $scheduleId;
+
+        return $this;
+    }
+
+    /**
+     * Get scheduleId
+     *
+     * @return integer 
+     */
+    public function getScheduleId()
+    {
+        return $this->scheduleId;
+    }
+
+    /**
+     * Set additionalInfo
+     *
+     * @param string $additionalInfo
+     * @return Resume
+     */
+    public function setAdditionalInfo($additionalInfo)
+    {
+        $this->additionalInfo = $additionalInfo;
+
+        return $this;
+    }
+
+    /**
+     * Get additionalInfo
+     *
+     * @return string 
+     */
+    public function getAdditionalInfo()
+    {
+        return $this->additionalInfo;
+    }
+
+    /**
+     * Set state
+     *
+     * @param integer $state
+     * @return Resume
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return integer 
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Resume
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Resume
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+}

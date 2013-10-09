@@ -136,5 +136,382 @@ class Vacancy
     private $updatedAt;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set employerId
+     *
+     * @param integer $employerId
+     * @return Vacancy
+     */
+    public function setEmployerId($employerId)
+    {
+        $this->employerId = $employerId;
+
+        return $this;
+    }
+
+    /**
+     * Get employerId
+     *
+     * @return integer 
+     */
+    public function getEmployerId()
+    {
+        return $this->employerId;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Vacancy
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set regionId
+     *
+     * @param integer $regionId
+     * @return Vacancy
+     */
+    public function setRegionId($regionId)
+    {
+        $this->regionId = $regionId;
+
+        return $this;
+    }
+
+    /**
+     * Get regionId
+     *
+     * @return integer 
+     */
+    public function getRegionId()
+    {
+        return $this->regionId;
+    }
+
+    /**
+     * Set salaryFrom
+     *
+     * @param integer $salaryFrom
+     * @return Vacancy
+     */
+    public function setSalaryFrom($salaryFrom)
+    {
+        $this->salaryFrom = $salaryFrom;
+
+        return $this;
+    }
+
+    /**
+     * Get salaryFrom
+     *
+     * @return integer 
+     */
+    public function getSalaryFrom()
+    {
+        return $this->salaryFrom;
+    }
+
+    /**
+     * Set salaryTo
+     *
+     * @param integer $salaryTo
+     * @return Vacancy
+     */
+    public function setSalaryTo($salaryTo)
+    {
+        $this->salaryTo = $salaryTo;
+
+        return $this;
+    }
+
+    /**
+     * Get salaryTo
+     *
+     * @return integer 
+     */
+    public function getSalaryTo()
+    {
+        return $this->salaryTo;
+    }
+
+    /**
+     * Set currencyId
+     *
+     * @param integer $currencyId
+     * @return Vacancy
+     */
+    public function setCurrencyId($currencyId)
+    {
+        $this->currencyId = $currencyId;
+
+        return $this;
+    }
+
+    /**
+     * Get currencyId
+     *
+     * @return integer 
+     */
+    public function getCurrencyId()
+    {
+        return $this->currencyId;
+    }
+
+    /**
+     * Set experienceId
+     *
+     * @param integer $experienceId
+     * @return Vacancy
+     */
+    public function setExperienceId($experienceId)
+    {
+        $this->experienceId = $experienceId;
+
+        return $this;
+    }
+
+    /**
+     * Get experienceId
+     *
+     * @return integer 
+     */
+    public function getExperienceId()
+    {
+        return $this->experienceId;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Vacancy
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Vacancy
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set scopeId
+     *
+     * @param integer $scopeId
+     * @return Vacancy
+     */
+    public function setScopeId($scopeId)
+    {
+        $this->scopeId = $scopeId;
+
+        return $this;
+    }
+
+    /**
+     * Get scopeId
+     *
+     * @return integer 
+     */
+    public function getScopeId()
+    {
+        return $this->scopeId;
+    }
+
+    /**
+     * Set functions
+     *
+     * @param string $functions
+     * @return Vacancy
+     */
+    public function setFunctions($functions)
+    {
+        $this->functions = $functions;
+
+        return $this;
+    }
+
+    /**
+     * Get functions
+     *
+     * @return string 
+     */
+    public function getFunctions()
+    {
+        return $this->functions;
+    }
+
+    /**
+     * Set educationLvlId
+     *
+     * @param integer $educationLvlId
+     * @return Vacancy
+     */
+    public function setEducationLvlId($educationLvlId)
+    {
+        $this->educationLvlId = $educationLvlId;
+
+        return $this;
+    }
+
+    /**
+     * Get educationLvlId
+     *
+     * @return integer 
+     */
+    public function getEducationLvlId()
+    {
+        return $this->educationLvlId;
+    }
+
+    /**
+     * Set scheduleId
+     *
+     * @param integer $scheduleId
+     * @return Vacancy
+     */
+    public function setScheduleId($scheduleId)
+    {
+        $this->scheduleId = $scheduleId;
+
+        return $this;
+    }
+
+    /**
+     * Get scheduleId
+     *
+     * @return integer 
+     */
+    public function getScheduleId()
+    {
+        return $this->scheduleId;
+    }
+
+    /**
+     * Set state
+     *
+     * @param integer $state
+     * @return Vacancy
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return integer 
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Vacancy
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Vacancy
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+}

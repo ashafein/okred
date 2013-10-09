@@ -4,12 +4,12 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TimeToArrive
+ * UserHasCompany
  *
  * @ORM\Entity
- * @ORM\Table(name="time_to_arrive")
+ * @ORM\Table(name="user_has_company")
  */
-class TimeToArrive
+class UserHasCompany
 {
     /**
      * @var integer
@@ -29,4 +29,50 @@ class TimeToArrive
     private $idCompany;
 
 
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return UserHasCompany
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set idCompany
+     *
+     * @param integer $idCompany
+     * @return UserHasCompany
+     */
+    public function setIdCompany($idCompany)
+    {
+        $this->idCompany = $idCompany;
+
+        return $this;
+    }
+
+    /**
+     * Get idCompany
+     *
+     * @return integer 
+     */
+    public function getIdCompany()
+    {
+        return $this->idCompany;
+    }
 }
