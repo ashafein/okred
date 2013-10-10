@@ -27,4 +27,37 @@ class Schedule
     private $schedule;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set schedule
+     *
+     * @param string $schedule
+     * @return Schedule
+     */
+    public function setSchedule($schedule)
+    {
+        $this->schedule = $schedule;
+
+        return $this;
+    }
+
+    /**
+     * Get schedule
+     *
+     * @return string 
+     */
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
 }

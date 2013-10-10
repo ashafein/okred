@@ -27,4 +27,37 @@ class TimeToArrive
     private $timeToArrive;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set timeToArrive
+     *
+     * @param string $timeToArrive
+     * @return TimeToArrive
+     */
+    public function setTimeToArrive($timeToArrive)
+    {
+        $this->timeToArrive = $timeToArrive;
+
+        return $this;
+    }
+
+    /**
+     * Get timeToArrive
+     *
+     * @return string 
+     */
+    public function getTimeToArrive()
+    {
+        return $this->timeToArrive;
+    }
 }

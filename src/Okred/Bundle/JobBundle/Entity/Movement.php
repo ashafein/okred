@@ -27,4 +27,37 @@ class Movement
     private $movement;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set movement
+     *
+     * @param string $movement
+     * @return Movement
+     */
+    public function setMovement($movement)
+    {
+        $this->movement = $movement;
+
+        return $this;
+    }
+
+    /**
+     * Get movement
+     *
+     * @return string 
+     */
+    public function getMovement()
+    {
+        return $this->movement;
+    }
 }

@@ -54,6 +54,37 @@ class UserInfo extends BaseUser
      */
     protected $citizenship_id;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="avatar", type="string", length=1024, nullable=true)
+     */
+    protected $avatar;
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_visited_at", type="datetime", nullable=true)
+     */
+    private $lastVisitedAt;
+
+
+     /**
+     * @var integer
+     *
+     * @ORM\Column(name="country_id", type="integer", nullable=true)
+     */
+    protected $countryId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="city_id", type="integer", nullable=true)
+     */
+    protected $cityId;
+
     /**
      *
      *@ORM\OneToOne(targetEntity = "Resume")

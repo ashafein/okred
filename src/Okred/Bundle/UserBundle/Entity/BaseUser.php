@@ -12,6 +12,23 @@ use Sonata\UserBundle\Model\UserInterface;
  */
 abstract class BaseUser extends FOSUser implements UserInterface
 {
+    /**
+     * @var integer
+     * @ORM\Column(type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     */
+    protected $id;
+
+
+
+    /**
+     * @return integer $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Returns the expiration date

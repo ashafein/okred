@@ -27,4 +27,37 @@ class LegalType
     private $legalType;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set legalType
+     *
+     * @param string $legalType
+     * @return LegalType
+     */
+    public function setLegalType($legalType)
+    {
+        $this->legalType = $legalType;
+
+        return $this;
+    }
+
+    /**
+     * Get legalType
+     *
+     * @return string 
+     */
+    public function getLegalType()
+    {
+        return $this->legalType;
+    }
 }

@@ -27,4 +27,37 @@ class CompanyType
     private $companyType;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set companyType
+     *
+     * @param string $companyType
+     * @return CompanyType
+     */
+    public function setCompanyType($companyType)
+    {
+        $this->companyType = $companyType;
+
+        return $this;
+    }
+
+    /**
+     * Get companyType
+     *
+     * @return string 
+     */
+    public function getCompanyType()
+    {
+        return $this->companyType;
+    }
 }

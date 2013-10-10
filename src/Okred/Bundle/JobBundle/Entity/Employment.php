@@ -27,4 +27,37 @@ class Employment
     private $employment;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set employment
+     *
+     * @param string $employment
+     * @return Employment
+     */
+    public function setEmployment($employment)
+    {
+        $this->employment = $employment;
+
+        return $this;
+    }
+
+    /**
+     * Get employment
+     *
+     * @return string 
+     */
+    public function getEmployment()
+    {
+        return $this->employment;
+    }
 }

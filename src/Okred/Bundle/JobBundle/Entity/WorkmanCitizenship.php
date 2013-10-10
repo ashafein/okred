@@ -4,12 +4,12 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * WorkmanJobAllow
+ * WorkmanCitizenship
  *
- * @ORM\Table(name="workman_job_allow")
+ * @ORM\Table(name="workman_has_citizenship")
  * @ORM\Entity
  */
-class WorkmanJobAllow
+class WorkmanCitizenship
 {
     /**
      * @var integer
@@ -35,7 +35,7 @@ class WorkmanJobAllow
      * Set workmanId
      *
      * @param integer $workmanId
-     * @return WorkmanJobAllow
+     * @return WorkmanHasCitizenship
      */
     public function setWorkmanId($workmanId)
     {
@@ -58,7 +58,7 @@ class WorkmanJobAllow
      * Set countryId
      *
      * @param integer $countryId
-     * @return WorkmanJobAllow
+     * @return WorkmanHasCitizenship
      */
     public function setCountryId($countryId)
     {

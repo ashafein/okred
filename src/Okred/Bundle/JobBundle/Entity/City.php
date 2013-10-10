@@ -8,9 +8,25 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity
  * @ORM\Table(name="city")
+ *
  */
 class City
 {
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="city")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     */
+
+    private $country;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="city")
+     * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     */
+
+    private $region;
+
     /**
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
@@ -41,4 +57,83 @@ class City
      */
     private $countryId;
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     * @return City
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set regionId
+     *
+     * @param integer $regionId
+     * @return City
+     */
+    public function setRegionId($regionId)
+    {
+        $this->regionId = $regionId;
+
+        return $this;
+    }
+
+    /**
+     * Get regionId
+     *
+     * @return integer 
+     */
+    public function getRegionId()
+    {
+        return $this->regionId;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     * @return City
+     */
+    public function setCountryId($countryId)
+    {
+        $this->countryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer 
+     */
+    public function getCountryId()
+    {
+        return $this->countryId;
+    }
 }

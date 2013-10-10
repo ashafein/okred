@@ -60,6 +60,19 @@ class User extends BaseUser
      */
     protected $emailverified;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string", length=200, nullable=true)
+     */
+    protected $role;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="state", type="integer", nullable=true)
+     */
+    protected $state;
 
     /**
      *
