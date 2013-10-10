@@ -39,19 +39,6 @@ class Company
      */
     private $name;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="company_type_id", type="integer", nullable=true)
-     */
-    private $companyTypeId;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="legal_type_id", type="integer", nullable=true)
-     */
-    private $LegalTypeId;
 
     /**
      * @var integer
@@ -95,26 +82,6 @@ class Company
      */
     private $website;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="city_id", type="integer", nullable=true)
-     */
-    private $cityId;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created_at", type="datetime", nullable=true)
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
-     */
-    private $updatedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\CompanyType")
@@ -140,6 +107,21 @@ class Company
      * @ORM\JoinColumn(name="scope_id", referencedColumnName="id")
      */
     protected $scope;
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
 
     /**

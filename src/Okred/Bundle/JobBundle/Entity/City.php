@@ -12,20 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class City
 {
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="city")
-     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
-     */
-
-    private $country;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Region", inversedBy="city")
-     * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
-     */
-
-    private $region;
 
     /**
      * @var integer
@@ -42,20 +28,22 @@ class City
      */
     private $city;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="region_id", type="integer", nullable=false)
-     */
-    private $regionId;
-
 
     /**
-     * @var integer
      *
-     * @ORM\Column(name="country_id", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="city")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      */
-    private $countryId;
+
+    private $country;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="city")
+     * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     */
+
+    private $region;
+
 
 
     /**
