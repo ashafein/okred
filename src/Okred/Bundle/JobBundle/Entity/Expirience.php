@@ -5,26 +5,26 @@
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * WorkmanExpirience
+ * Experience
  *
- * @ORM\Table(name="workman_expirience")
+ * @ORM\Table(name="experience")
  * @ORM\Entity
  */
-class WorkmanExpirience
+class Experience
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_expirience", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idExpirience;
+    private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_workman", type="integer", nullable=false)
+     * @ORM\Column(name="workman_id", type="integer", nullable=false)
      */
     private $idWorkman;
 
@@ -38,7 +38,7 @@ class WorkmanExpirience
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_city", type="integer", nullable=false)
+     * @ORM\Column(name="city_id", type="integer", nullable=false)
      */
     private $idCity;
 
@@ -52,9 +52,9 @@ class WorkmanExpirience
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_activity_sphere", type="integer", nullable=false)
+     * @ORM\Column(name="scope_id", type="integer", nullable=false)
      */
-    private $idActivitySphere;
+    private $scopeId;
 
     /**
      * @var string
