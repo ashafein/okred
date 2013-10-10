@@ -1,25 +1,23 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Language
  *
- * @ORM\Table(name="language")
  * @ORM\Entity
+ * @ORM\Table(name="language")
  */
 class Language
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_language", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idLanguage;
+    private $id;
 
     /**
      * @var string
@@ -29,4 +27,37 @@ class Language
     private $language;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     * @return Language
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string 
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 }

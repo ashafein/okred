@@ -4,28 +4,35 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Область деятельности компании. Справочник.
+ * Scope
+ *
+ * @ORM\Table(name="scope")
  * @ORM\Entity
- * @ORM\Table(name="activity_sphere")
  */
-class ActivitySphere
+class Scope
 {
     /**
      * @var integer
+     *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
+
     /**
      * @var string
-     * @ORM\Column(name="scope", type="string", length=200, nullable=true)
+     *
+     * @ORM\Column(name="scope", type="string", length=300, nullable=false)
      */
     private $scope;
 
+
     /**
-     * @return int
+     * Get id
+     *
+     * @return integer 
      */
     public function getId()
     {
@@ -33,18 +40,25 @@ class ActivitySphere
     }
 
     /**
-     * @return string
+     * Set scope
+     *
+     * @param string $scope
+     * @return Scope
+     */
+    public function setScope($scope)
+    {
+        $this->scope = $scope;
+
+        return $this;
+    }
+
+    /**
+     * Get scope
+     *
+     * @return string 
      */
     public function getScope()
     {
         return $this->scope;
-    }
-
-    /**
-     * @param string $value
-     */
-    public function setScope($value)
-    {
-        $this->scope = $value;
     }
 }

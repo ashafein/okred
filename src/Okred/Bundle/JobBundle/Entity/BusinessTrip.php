@@ -1,25 +1,21 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * BusinessTrip
- *
- * @ORM\Table(name="business_trip")
  * @ORM\Entity
+ * @ORM\Table(name="business_trip")
  */
 class BusinessTrip
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_business_trip", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idBusinessTrip;
+    private $id;
 
     /**
      * @var string
@@ -29,4 +25,37 @@ class BusinessTrip
     private $businessTrip;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set businessTrip
+     *
+     * @param string $businessTrip
+     * @return BusinessTrip
+     */
+    public function setBusinessTrip($businessTrip)
+    {
+        $this->businessTrip = $businessTrip;
+
+        return $this;
+    }
+
+    /**
+     * Get businessTrip
+     *
+     * @return string 
+     */
+    public function getBusinessTrip()
+    {
+        return $this->businessTrip;
+    }
 }

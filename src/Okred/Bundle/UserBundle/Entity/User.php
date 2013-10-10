@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    // FOSUser username field hide
     public function setEmail($value)
     {
         $this->email = $value;
@@ -22,6 +23,7 @@ class User extends BaseUser
         $this->usernameCanonical = $value;
     }
 
+    // Name part combinations
     public function getShortName()
     {
         if ($this->firstname) {

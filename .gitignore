@@ -9,5 +9,9 @@
 /build/
 /vendor/
 /composer.phar
+<<<<<<< HEAD
+/.idea
+=======
 /build.properties
 /build.symfony.properties
+>>>>>>> master

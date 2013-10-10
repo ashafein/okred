@@ -1,46 +1,103 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Region
  *
- * @ORM\Table(name="region")
  * @ORM\Entity
+ * @ORM\Table(name="region")
+ *
  */
 class Region
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_region", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idRegion;
+    private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_country", type="integer", nullable=false)
+     * @ORM\Column(name="country_id", type="integer", nullable=false)
      */
-    private $idCountry;
+    private $countryId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="region_name_ru", type="string", length=255, nullable=false)
+     * @ORM\Column(name="region", type="string", length=255, nullable=false)
      */
-    private $regionNameRu;
+    private $region;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="region_name_en", type="string", length=255, nullable=false)
+     * @ORM\OneToMany(targetEntity="City", mappedBy="region")
      */
-    private $regionNameEn;
+    private $city;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="region")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     */
+    private $country;
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     * @return Region
+     */
+    public function setCountryId($countryId)
+    {
+        $this->countryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer 
+     */
+    public function getCountryId()
+    {
+        return $this->countryId;
+    }
+
+    /**
+     * Set region
+     *
+     * @param string $region
+     * @return Region
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return string 
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
 }

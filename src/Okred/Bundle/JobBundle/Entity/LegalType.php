@@ -1,25 +1,23 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * LegalType
  *
- * @ORM\Table(name="legal_type")
  * @ORM\Entity
+ * @ORM\Table(name="legal_type")
  */
 class LegalType
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id_legal_type", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idLegalType;
+    private $id;
 
     /**
      * @var string
@@ -29,4 +27,37 @@ class LegalType
     private $legalType;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set legalType
+     *
+     * @param string $legalType
+     * @return LegalType
+     */
+    public function setLegalType($legalType)
+    {
+        $this->legalType = $legalType;
+
+        return $this;
+    }
+
+    /**
+     * Get legalType
+     *
+     * @return string 
+     */
+    public function getLegalType()
+    {
+        return $this->legalType;
+    }
 }
