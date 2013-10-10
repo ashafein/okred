@@ -18,19 +18,6 @@ class Response
      */
     private $id;
 
-    /**
-     * @var integer
-     * @ORM\Column(name="vacancy_id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    private $vacancyId;
-
-    /**
-     * @var integer
-     * @ORM\Column(name="resume_id", type="integer", nullable=false)
-     */
-    private $resumeId;
 
     /**
      * @var integer
