@@ -82,6 +82,9 @@ fos_user:
     user_class:      Okred\Bundle\UserBundle\Entity\User
     group:
         group_class: Okred\Bundle\UserBundle\Entity\Group
+    registration:
+        form:
+            type: okred_fos_user_registration
 
 # Sonata
 sonata_block:

@@ -103,12 +103,12 @@ class UserAdmin extends Admin
                 'gender',
                 'choice',
                 array(
-                    'choices' => array(
+                    'choices'            => array(
                         UserInterface::GENDER_UNKNOWN => 'gender_unknown',
-                        UserInterface::GENDER_FEMALE => 'gender_female',
-                        UserInterface::GENDER_MAN => 'gender_male',
+                        UserInterface::GENDER_FEMALE  => 'gender_female',
+                        UserInterface::GENDER_MAN     => 'gender_male',
                     ),
-                    'required' => true,
+                    'required'           => true,
                     'translation_domain' => $this->getTranslationDomain()
                 )
             )

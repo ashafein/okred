@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\UserBundle\SonataUserBundle(),
             new Okred\Bundle\UserBundle\OkredUserBundle(),
+            new Okred\Bundle\FOSUserBundle\OkredFOSUserBundle(),
             new Okred\Bundle\JobBundle\OkredJobBundle(),
         );
 

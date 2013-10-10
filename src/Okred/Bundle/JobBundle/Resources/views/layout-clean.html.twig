@@ -21,7 +21,7 @@
 <body>
 {% block container -%}
     <div class="container">
-        <div class="masthead">
+        <div class="masthead masthead-clean">
             <div class="title">
                 <a href="{{ path('okred_job_home') }}" class="no-link">
                     <h3 class="text-muted">OK<span class="red">RED</span>.JOB</h3>
@@ -45,12 +45,6 @@
                 {% endif %}
             </div>
             <div class="clearfix"></div>
-            <ul class="nav nav-justified">
-                <li class="active"><a href="#">{{ 'site.nav.search'|trans }}</a></li>
-                <li><a href="#">{{ 'site.nav.vacancy'|trans }}</a></li>
-                <li><a href="#">{{ 'site.nav.resume'|trans }}</a></li>
-                <li><a href="#">{{ 'site.nav.about'|trans }}</a></li>
-            </ul>
         </div>
         {% block page %}{% endblock %}
         <div class="footer">
@@ -58,35 +52,5 @@
         </div>
     </div>
 {%- endblock %}
-{#<div style="position:relative; box-sizing: border-box; height:180px; background: #ff0;">
-<div style="float: left; margin: 10px;">
-<ul>
-<li><a href="" style="font-weight: bold;">Об OKRED.Job</a></li>
-<li><a href="">Наши вакансии</a></li>
-<li><a href="">Пишите нам</a></li>
-<li><a href="">Оцените нас</a></li>
-<li><a href="">Партнёры</a></li>
-<li><a href="">Исследования</a></li>
-<li><a href="">Требования к ПО</a></li>
-<li><a href="">Реклама на сайте</a></li>
-</ul>
-</div>
-<div style="float: left; margin: 10px;">
-<ul>
-<li><a href="" style="font-weight: bold;">Работодателям</a></li>
-<li><a href="">Публикация вакансий</a></li>
-<li><a href="">Прайс-лист</a></li>
-<li><a href="">Производственный календарь</a></li>
-</ul>
-</div>
-<div style="float: left; margin: 10px;">
-<ul>
-<li><a href="" style="font-weight: bold;">Соискателям</a></li>
-<li><a href="">Продвижение резюме</a></li>
-<li><a href="">Работа в других городах</a></li>
-<li><a href="">Защита персональных данных</a></li>
-</ul>
-</div>
-</div> #}
 </body>
 </html>

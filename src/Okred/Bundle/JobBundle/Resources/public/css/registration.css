@@ -2,7 +2,7 @@ html, body {
 	min-height:100%;
 	height:auto !important;
 	height:100%;
-	background: url(../img/registration-bg.jpg);
+	background: url(../images/background-y1.jpg);
 }
 h1 {
 	margin: 0;
@@ -42,7 +42,7 @@ h1 {
 		#registration {
 			height: 82px;
 			border-left: 4px solid #00c4c0;
-			
+
 		}
 			#registration  h1, #registration  a {
 				line-height: 82px;
@@ -62,9 +62,9 @@ h1 {
 			#registration  a:hover {
 				text-decoration: none;
 			}
-		
-		
-		
+
+
+
 	#extra-column {
 		width: 24.5%;
 		float: left;
@@ -159,11 +159,11 @@ h1 {
 					height: 20px;
 				}
 					#reg-fields .input-box .input>.true {
-						background: url(../img/reg-sprite.png);
+						background: url(../images/reg-sprite.png);
 						background-position: -6px -5px;
 					}
 					#reg-fields .input-box .input>.false {
-						background: url(../img/reg-sprite.png);
+						background: url(../images/reg-sprite.png);
 						background-position: -34px -5px;
 					}
 				#reg-fields .input-box input:focus {
@@ -188,7 +188,7 @@ h1 {
 					zoom: 1;
 					*display: inline;
 					line-height: 40px;
-				
+
 					font-family: Arial;
 					font-size: 15px;
 					color: #adadad;
@@ -213,12 +213,12 @@ h1 {
 					zoom: 1;
 					*display: inline;
 				}
-				
-				
+
+
 		.system-msg {
 			position: relative;
 			margin: 0 auto;
-			
+
 		}
 		.system-msg>span {
 			font-family: RobotoRegular;
@@ -229,5 +229,5 @@ h1 {
 		.system-msg div.ok {
 			/* position: absolute;
 			left:0; */
-			background: url("../img/reg-sprite.png") repeat scroll -6px -5px rgba(0, 0, 0, 0);
+			background: url("../images/reg-sprite.png") repeat scroll -6px -5px rgba(0, 0, 0, 0);
 		}

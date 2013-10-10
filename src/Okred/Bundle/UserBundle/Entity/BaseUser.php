@@ -21,6 +21,16 @@ abstract class BaseUser extends FOSUser implements UserInterface
     protected $id;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Group")
+     * @ORM\JoinTable(
+     *     name="fos_user_user_group",
+     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
+     * )
+     */
+    protected $groups;
+
+    /**
      * @var DateTime
      * @ORM\Column(name="created_at", type="datetime")
      */
@@ -112,7 +122,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Returns the creation date
-     *
      * @return \DateTime|null
      */
     public function getCreatedAt()
@@ -132,7 +141,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Returns the last update date
-     *
      * @return \DateTime|null
      */
     public function getUpdatedAt()
@@ -142,7 +150,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Returns the expiration date
-     *
      * @return \DateTime|null
      */
     public function getExpiresAt()
@@ -152,7 +159,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Returns the credentials expiration date
-     *
      * @return \DateTime
      */
     public function getCredentialsExpireAt()
@@ -164,6 +170,7 @@ abstract class BaseUser extends FOSUser implements UserInterface
      * Sets the credentials expiration date
      *
      * @param \DateTime|null $date
+     *
      * @return \FOS\UserBundle\Model\User|void
      */
     public function setCredentialsExpireAt(\DateTime $date = null)
@@ -173,7 +180,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Returns a string representation
-     *
      * @return string
      */
     public function __toString()
@@ -197,6 +203,7 @@ abstract class BaseUser extends FOSUser implements UserInterface
      * Sets the two-step verification code
      *
      * @param string $twoStepVerificationCode
+     *
      * @return string|void
      */
     public function setTwoStepVerificationCode($twoStepVerificationCode)
@@ -206,7 +213,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Returns the two-step verification code
-     *
      * @return string
      */
     public function getTwoStepVerificationCode()

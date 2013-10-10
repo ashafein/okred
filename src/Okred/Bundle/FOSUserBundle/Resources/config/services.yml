@@ -1,0 +1,6 @@
+services:
+    okred_fos_user.registration.form.type:
+        class: Okred\Bundle\FOSUserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: okred_fos_user_registration }

@@ -1,0 +1,31 @@
+header:
+    login: Вход на сайт
+
+form:
+    group_name: "Название группы"
+    username: "Логин"
+    email: "Электронная почта"
+    last_name:   "Фамилия"
+    first_name:  "Имя"
+    middle_name: "Отчество"
+    current_password: "Текущий пароль"
+    password: "Пароль"
+    password_confirmation: "Подтвердите пароль"
+    new_password: "Новый пароль"
+    new_password_confirmation: "Подтвердите пароль"
+
+registration:
+    field_group:
+        account:     "Аккаунт"
+        person_info: "Личные данные"
+
+    do_register:  Зарегистрироваться
+    and_continue: и продолжить оформление
+
+security:
+    login:
+        username:    "Имя пользователя"
+        email:       "Электронная почта"
+        password:    "Пароль"
+        remember_me: "Запомнить меня"
+        submit:      "Войти"
