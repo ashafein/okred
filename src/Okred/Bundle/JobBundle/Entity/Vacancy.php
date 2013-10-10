@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Vacancy
 {
     /**
-     * @var integer
-     * @ORM\Column(type="bigint")
+     * @var int
+     * @ORM\Column(type="integer")
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -31,6 +31,19 @@ class Vacancy
      * @ORM\Column(name="region_id", type="integer", nullable=false)
      */
     private $regionId;
+
+
+    /**
+     * @var integer
+     * @ORM\Column(name="city_id", type="integer", nullable=false)
+     */
+    private $cityId;
+
+    /**
+     * @var integer
+     * @ORM\Column(name="country_id", type="integer", nullable=false)
+     */
+    private $countryId;
 
     /**
      * @var integer
@@ -52,9 +65,9 @@ class Vacancy
 
     /**
      * @var integer
-     * @ORM\Column(name="experience_id", type="integer", nullable=true)
+     * @ORM\Column(name="experienced_id", type="integer", nullable=true)
      */
-    private $experienceId;
+    private $experiencedId;
 
     /**
      * @var string
@@ -109,6 +122,62 @@ class Vacancy
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Scope")
+     * @ORM\JoinColumn(name="scope_id", referencedColumnName="id")
+     */
+    private $scope;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Currency")
+     * @ORM\JoinColumn(name="currency_id", referencedColumnName="id")
+     */
+    private $currency;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="EducationLvl")
+     * @ORM\JoinColumn(name="education_lvl_id", referencedColumnName="id")
+     */
+    private $educationLvl;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Schedule")
+     * @ORM\JoinColumn(name="schedule_id", referencedColumnName="id")
+     */
+    private $schedule;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
+    private $city;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Region")
+     * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     */
+    private $region;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     */
+    private $country;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Technology")
+     * @ORM\JoinTable(name="vacancy_technology",
+     * joinColumns={@ORM\JoinColumn(name="vacancy_id", referencedColumnName="id")},
+     * inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id", unique=true)}
+     * )
+     */
+    private $technology;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Response",  mappedBy="vacancy")
+     */
+    protected $response;
 
     /**
      * Get id

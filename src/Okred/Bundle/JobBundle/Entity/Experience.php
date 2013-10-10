@@ -61,6 +61,34 @@ class Experience
     private $endDate;
 
     /**
+     * @var @var integer
+     *
+     * @ORM\Column(name="visible", type="integer", nullable=true)
+     */
+    private $visible;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
+    private $city;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Scope")
+     * @ORM\JoinColumn(name="scope_id", referencedColumnName="id")
+     */
+    private $scope;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Technology")
+     * @ORM\JoinTable(name="experience_technology",
+     * joinColumns={@ORM\JoinColumn(name="experience_id", referencedColumnName="id")},
+     * inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id", unique=true)}
+     * )
+     */
+    private $technologies;
+
+    /**
      * Get id
      * @return integer
      */
