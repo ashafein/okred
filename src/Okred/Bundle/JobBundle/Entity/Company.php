@@ -119,6 +119,47 @@ class Company
 
 
     /**
+     * @ORM\ManyToMany(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="companies")
+     * @ORM\JoinTable(name="employer_company",
+     * joinColumns={@ORM\JoinColumn(name="company_id", referencedColumnName="id")},
+     * inverseJoinColumns={@ORM\JoinColumn(name="employer_id", referencedColumnName="id")}
+     *)
+     */
+    private $users;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="ownCompany")
+     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
+     */
+    private $owner;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\CompanyType")
+     * @ORM\JoinColumn(name="company_type_id", referencedColumnName="id")
+     */
+    protected $companyType;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\LegalType")
+     * @ORM\JoinColumn(name="legal_type_id", referencedColumnName="id")
+     */
+    protected $legalType;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
+    protected $city;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Scope")
+     * @ORM\JoinColumn(name="scope_id", referencedColumnName="id")
+     */
+    protected $scope;
+
+
+    /**
      * Get id
      *
      * @return integer 

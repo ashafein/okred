@@ -86,17 +86,12 @@ class User extends BaseUser
     protected $vacancy;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Company")
-     * @ORM\JoinTable(name="employer_company",
-     * joinColumns={@ORM\JoinColumn(name="employer_id", referencedColumnName="id")},
-     * inverseJoinColumns={@ORM\JoinColumn(name="company_id", referencedColumnName="id")}
-     *)
+     * @ORM\ManyToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Company", mappedBy="users")
      */
-    protected $company;
+    protected $companies;
 
     /**
-     * @ORM\OneToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Company")
-     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Company", mappedBy="owner")
      *
      */
     protected $ownCompany;
