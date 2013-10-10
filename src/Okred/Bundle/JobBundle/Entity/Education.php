@@ -62,7 +62,11 @@ class Education
      */
     private $certificate;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="education")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * Get id

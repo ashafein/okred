@@ -1,6 +1,5 @@
 <?php
-
-
+namespace Okred\Bundle\JobBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,10 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Portfolio
 {
     /**
-
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
-
      * @var integer
      *
      * @ORM\Column(name="portfolio_id", type="integer", nullable=false)
@@ -38,6 +33,13 @@ class Portfolio
      * @ORM\Column(name="file_name", type="string", length=1024, nullable=true)
      */
     private $fileName;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="portfolio")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     */
+    private $user;
 
 
 }

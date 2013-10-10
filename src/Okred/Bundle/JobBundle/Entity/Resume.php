@@ -15,13 +15,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Resume
 {
     /**
-     *
-     * @ORM\OneToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
-     *
-     *
-     *
-     *
      * @var integer
      * @ORM\Column(type="bigint")
      * @ORM\Id()
@@ -191,7 +184,54 @@ class Resume
      */
     private $updatedAt;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="resume")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     */
+    private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Schedule")
+     * @ORM\JoinColumn(name="schedule_id", referencedColumnName="id")
+     */
+    private $schedule;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Movement")
+     * @ORM\JoinColumn(name="movement_id", referencedColumnName="id")
+     */
+    private $movement;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="businessTrip")
+     * @ORM\JoinColumn(name="business_trip_id", referencedColumnName="id")
+     */
+    private $businessTrip;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="TimeToArrive")
+     * @ORM\JoinColumn(name="time_to_arrive_id", referencedColumnName="id")
+     */
+    private $timeToArrive;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Scope")
+     * @ORM\JoinColumn(name="scope_id", referencedColumnName="id")
+     */
+    private $scope;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Currency")
+     * @ORM\JoinColumn(name="currency_id", referencedColumnName="id")
+     */
+    private $currency;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Employment")
+     * @ORM\JoinColumn(name="employment_id", referencedColumnName="id")
+     */
+    private $employment;
 
     /**
      * Get id

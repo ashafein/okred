@@ -21,6 +21,11 @@ abstract class BaseUser extends FOSUser implements UserInterface
     protected $id;
 
 
+    /**
+     * @var string
+     * @ORM\Column(name="two_step_code", type="string", length=255, nullable=true)
+     */
+   protected $twoStepVerificationCode;
 
     /**
      * @return integer $id
@@ -83,7 +88,26 @@ abstract class BaseUser extends FOSUser implements UserInterface
         }
     }
 
+    /**
+     * Sets the two-step verification code
+     *
+     * @param string $twoStepVerificationCode
+     * @return string|void
+     */
+    public function setTwoStepVerificationCode($twoStepVerificationCode)
+    {
+        $this->twoStepVerificationCode = $twoStepVerificationCode;
+    }
 
+    /**
+     * Returns the two-step verification code
+     *
+     * @return string
+     */
+    public function getTwoStepVerificationCode()
+    {
+         return $this->twoStepVerificationCode;
+    }
 
     /**
      * Hook on pre-persist operations

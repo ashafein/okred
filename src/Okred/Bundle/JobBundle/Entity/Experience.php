@@ -77,6 +77,12 @@ class Experience
 
 
     /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="experience")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
      * Get id
      *
      * @return integer 

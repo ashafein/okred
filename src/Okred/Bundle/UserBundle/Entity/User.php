@@ -2,7 +2,7 @@
 namespace Okred\Bundle\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Okred\Bundle\JobBundle\Entity as JOB;
 /**
  * @ORM\Entity()
  * @ORM\Table(name="fos_user_user")
@@ -61,13 +61,6 @@ class User extends BaseUser
     protected $emailverified;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="role", type="string", length=200, nullable=true)
-     */
-    protected $role;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="state", type="integer", nullable=true)
@@ -76,101 +69,97 @@ class User extends BaseUser
 
     /**
      *
-     * @ORM\OneToOne(targetEntity = "UserInfo")
+     * @ORM\OneToOne(targetEntity="UserInfo")
      * joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id")},
      *
      */
     protected $userInfo;
 
     /**
-     * @ORM\OneToOne(targetEntity = "Resume")
-     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Resume", mappedBy="user")
      */
     protected $resume;
 
     /**
-     *
-     * @ORM\OneToMany(targetEntity = "Vacancy")
-     * @ORM\JoinColumn(name="employer_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Vacancy", mappedBy="user")
      */
     protected $vacancy;
 
     /**
-     * @ORM\ManyToMany(targetEntity = "Company")
+     * @ORM\ManyToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Company")
      * @ORM\JoinTable(name="employer_company",
      * joinColumns={@ORM\JoinColumn(name="employer_id", referencedColumnName="id")},
      * inverseJoinColumns={@ORM\JoinColumn(name="company_id", referencedColumnName="id")}
+     *)
      */
     protected $company;
 
     /**
-     * @ORM\OneToOne(targetEntity = "Company")
+     * @ORM\OneToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Company")
      * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
      *
      */
     protected $ownCompany;
 
     /**
-     * @ORM\ManyToOne(targetEntity = "City")
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\City")
      * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     protected $residence;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity = "Country")
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      */
     protected $citizenship;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity = "Region")
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\Region")
      * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
      */
     protected $region;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity = "EducationLvl")
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\EducationLvl")
      * @ORM\JoinColumn(name="education_lvl_id", referencedColumnName="id")
      */
     protected $educationLvl;
 
 
     /**
-     * @ORM\OneToMany(targetEntity = "Education")
-     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Education",  mappedBy="user")
      */
     protected $education;
 
 
     /**
-     * @ORM\OneToMany(targetEntity = "Experience")
-     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Experience",mappedBy="user")
      */
     protected $experience;
 
     /**
-     * @ORM\ManyToMany(targetEntity = "Language")
+     * @ORM\ManyToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Language")
      * @ORM\JoinTable(name="workman_language",
      * joinColumns={@ORM\JoinColumn(name="workman_id", referencedColumnName="id")},
      * inverseJoinColumns={@ORM\JoinColumn(name="language_id", referencedColumnName="id")}
+     *)
      */
     protected $language;
 
     /**
-     *@ORM\OneToMany(targetEntity = "Portfolio")
-     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     *@ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Portfolio", mappedBy="user")
      */
     protected $portfolio;
 
     /**
-     * @ORM\OneToMany(targetEntity = "Country")
+     * @ORM\ManyToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Country")
      * @ORM\JoinTable(name="workman_job_allow",
      * joinColumns={@ORM\JoinColumn(name="workman_id", referencedColumnName="id")},
      * inverseJoinColumns={@ORM\JoinColumn(name="country_id", referencedColumnName="id")}
-
+     *)
      */
     protected $jobAllow;
 
@@ -185,11 +174,11 @@ class User extends BaseUser
     /**
      * @return string
      */
-    public function getFullname()
+   /* public function getFullname()
     {
         return sprintf("%s %s", $this->getFirstname(), $this->getLastname());
     }
-
+*/
     /**
      * @return array
      */

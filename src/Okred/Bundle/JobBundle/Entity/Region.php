@@ -13,12 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Region
 {
     /**
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="region")
-     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
-     *
-     *
      * @var integer
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -40,6 +34,16 @@ class Region
      */
     private $region;
 
+    /**
+     * @ORM\OneToMany(targetEntity="City", mappedBy="region")
+     */
+    private $city;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="region")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     */
+    private $country;
 
     /**
      * Get id

@@ -16,11 +16,6 @@ class Vacancy
 {
     /**
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="employer_id", referencedColumnName="id")
-     *
-     * @ORM\ManyToMany(targetEntity="Technology")
-     *
      * @var integer
      * @ORM\Column(type="bigint")
      * @ORM\Id()
@@ -142,6 +137,11 @@ class Vacancy
     private $updatedAt;
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User", inversedBy="vacancy")
+     * @ORM\JoinColumn(name="workman_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * Get id

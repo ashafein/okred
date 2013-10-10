@@ -5,9 +5,9 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ExperienceHasTechnology
+ * ExperienceTechnology
  */
-class ExperienceHasTechnology
+class ExperienceTechnology
 {
     /**
      * @var integer
