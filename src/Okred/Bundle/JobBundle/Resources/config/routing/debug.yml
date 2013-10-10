@@ -1,0 +1,13 @@
+okred_job_debug_email:
+    pattern:  /send-email/{email}
+    requirements:
+        email: .+
+    defaults:
+        _controller: OkredJobBundle:Debug:sendEmail
+
+okred_job_debug_email:
+    pattern:  /render-view/{template}
+    requirements:
+        email: .+
+    defaults:
+        _controller: OkredJobBundle:Debug:renderView

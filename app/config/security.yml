@@ -12,7 +12,7 @@ security:
             security: false
 
         admin:
-            pattern:          /admin(.*)
+            pattern:          ^/admin/
             context:          user
             form_login:
                 provider:     fos_userbundle
@@ -25,7 +25,7 @@ security:
             anonymous:        true
 
         main:
-            pattern:          .*
+            pattern:          ^/
             context:          user
             form_login:
                 provider:     fos_userbundle

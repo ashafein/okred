@@ -73,6 +73,12 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
+    registration:
+        confirmation:
+            enabled:    true
+    from_email:
+        address:        noreply@okred.ru
+        sender_name:    OKRED
     user_class:      Okred\Bundle\UserBundle\Entity\User
     group:
         group_class: Okred\Bundle\UserBundle\Entity\Group
