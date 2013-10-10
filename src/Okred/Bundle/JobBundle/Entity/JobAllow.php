@@ -4,12 +4,12 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * WorkmanLanguage
+ * JobAllow
  *
- * @ORM\Table(name="workman_has_language")
+ * @ORM\Table(name="job_allow")
  * @ORM\Entity
  */
-class WorkmanLanguage
+class JobAllow
 {
     /**
      * @var integer
@@ -23,11 +23,11 @@ class WorkmanLanguage
     /**
      * @var integer
      *
-     * @ORM\Column(name="language_id", type="integer", nullable=false)
+     * @ORM\Column(name="country_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $languageId;
+    private $countryId;
 
 
 
@@ -35,7 +35,7 @@ class WorkmanLanguage
      * Set workmanId
      *
      * @param integer $workmanId
-     * @return WorkmanHasLanguage
+     * @return WorkmanJobAllow
      */
     public function setWorkmanId($workmanId)
     {
@@ -55,25 +55,25 @@ class WorkmanLanguage
     }
 
     /**
-     * Set languageId
+     * Set countryId
      *
-     * @param integer $languageId
-     * @return WorkmanHasLanguage
+     * @param integer $countryId
+     * @return WorkmanJobAllow
      */
-    public function setLanguageId($languageId)
+    public function setCountryId($countryId)
     {
-        $this->languageId = $languageId;
+        $this->countryId = $countryId;
 
         return $this;
     }
 
     /**
-     * Get languageId
+     * Get countryId
      *
      * @return integer 
      */
-    public function getLanguageId()
+    public function getCountryId()
     {
-        return $this->languageId;
+        return $this->countryId;
     }
 }

@@ -4,10 +4,10 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * UserHasCompany
+ * UserCompany
  *
  * @ORM\Entity
- * @ORM\Table(name="user_has_company")
+ * @ORM\Table(name="user_company")
  */
 class UserCompany
 {

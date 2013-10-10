@@ -4,12 +4,12 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Schedule
+ * Experience
  *
  * @ORM\Entity
- * @ORM\Table(name="workman_experience")
+ * @ORM\Table(name="experience")
  */
-class WorkmanExperience
+class Experience
 {
     /**
      * @var integer

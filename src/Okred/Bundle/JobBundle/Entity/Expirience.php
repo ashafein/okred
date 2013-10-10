@@ -26,7 +26,7 @@ class Experience
      *
      * @ORM\Column(name="workman_id", type="integer", nullable=false)
      */
-    private $idWorkman;
+    private $workmanId;
 
     /**
      * @var string
@@ -40,7 +40,7 @@ class Experience
      *
      * @ORM\Column(name="city_id", type="integer", nullable=false)
      */
-    private $idCity;
+    private $cityId;
 
     /**
      * @var string
