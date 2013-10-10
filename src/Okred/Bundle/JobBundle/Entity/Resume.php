@@ -234,6 +234,11 @@ class Resume
     private $employment;
 
     /**
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Response",  mappedBy="resume")
+     */
+    protected $response;
+
+    /**
      * Get id
      *
      * @return integer 

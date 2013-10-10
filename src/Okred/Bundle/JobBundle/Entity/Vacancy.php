@@ -211,6 +211,17 @@ class Vacancy
     private $technology;
 
     /**
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Education",  mappedBy="user")
+     */
+    protected $education;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Response",  mappedBy="vacancy")
+     */
+    protected $response;
+
+    /**
      * Get id
      *
      * @return integer 

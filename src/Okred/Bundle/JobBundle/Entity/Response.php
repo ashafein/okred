@@ -109,7 +109,20 @@ class Response
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User",  inversedBy="response")
+     */
+    protected $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Vacancy",  inversedBy="response")
+     */
+    protected $vacancy;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Resume",  inversedBy="response")
+     */
+    protected $resume;
 
     /**
      * Set id

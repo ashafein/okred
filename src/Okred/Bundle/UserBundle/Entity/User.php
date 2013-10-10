@@ -159,6 +159,11 @@ class User extends BaseUser
     protected $jobAllow;
 
     /**
+     * @ORM\OneToMany(targetEntity="Okred\Bundle\JobBundle\Entity\Response",  mappedBy="user")
+     */
+    protected $response;
+
+    /**
      * @return integer $id
      */
     public function getId()
