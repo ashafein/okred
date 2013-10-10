@@ -1,0 +1,28 @@
+{% extends "OkredJobBundle::layout.html.twig" %}
+{% trans_default_domain "OkredJobBundle" %}
+{% set tab = 'responses' %}
+{% block page %}
+    <div class="row">
+        <div class="col-md-12">
+            {% include "OkredJobBundle:Candidate:_header.html.twig" %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped space-top-m">
+                <tr>
+                    <th>Вакансия</th>
+                    <th>Кампания</th>
+                    <th>История</th>
+                    <th>Действия</th>
+                </tr>
+                {% for e in active_responses %}
+                {% else %}
+                    <tr class="warning">
+                        <td colspan="4">Нет ни одного отклика</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

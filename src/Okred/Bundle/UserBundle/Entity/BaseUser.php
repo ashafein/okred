@@ -253,22 +253,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
     }
 
     /**
-     * @param string $gender
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
-    /**
      * @param string $lastname
      */
     public function setLastname($lastname)
@@ -289,7 +273,7 @@ abstract class BaseUser extends FOSUser implements UserInterface
      */
     public function getMiddlename()
     {
-        return $this->lastname;
+        return $this->middlename;
     }
 
     /**
@@ -297,7 +281,23 @@ abstract class BaseUser extends FOSUser implements UserInterface
      */
     public function setMiddlename($value)
     {
-        $this->lastname = $value;
+        $this->middlename = $value;
+    }
+
+    /**
+     * @param string $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**

@@ -1,6 +1,17 @@
 site:
     nav:
-        search:  Поиск
-        vacancy: Вакансии
-        resume:  Резюме
-        about:   О проекте
+        search:  "Поиск"
+        vacancy: "Вакансии"
+        resume:  "Резюме"
+        about:   "О проекте"
+
+user:
+    profile:
+        full_name:  "ФИО"
+        email:      "Электронная почта"
+        header:     "Профиль пользователя %name%"
+        edit:       "Редактировать профиль"
+    password:
+        change: "Сменить пароль"
+    vacancy:
+        request: "Мои отклики"

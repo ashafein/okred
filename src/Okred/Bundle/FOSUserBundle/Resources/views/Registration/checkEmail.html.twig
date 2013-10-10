@@ -1,6 +1,5 @@
 {% extends "OkredJobBundle::layout-clean.html.twig" %}
 {% trans_default_domain "FOSUserBundle" %}
-
 {% block page %}
     <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
 {% endblock %}

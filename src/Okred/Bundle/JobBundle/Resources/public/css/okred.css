@@ -3,6 +3,11 @@ body {
     background: url('../images/background-y1.jpg') repeat;
 }
 
+
+.space-top-m {
+    margin-top: 20px;
+}
+
 .red {
     color: #f00;
 }

@@ -1,0 +1,9 @@
+okred_job_userprofile_main:
+    pattern: /
+    defaults:
+        _controller: OkredJobBundle:Candidate:responses
+
+okred_job_userprofile_view:
+    pattern: /view
+    defaults:
+        _controller: OkredJobBundle:Candidate:profile

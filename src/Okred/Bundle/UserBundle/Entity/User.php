@@ -31,4 +31,9 @@ class User extends BaseUser
             return $this->username;
         }
     }
+
+    public function getFullname()
+    {
+        return implode(' ', array_filter(array($this->firstname, $this->lastname, $this->middlename)));
+    }
 }
