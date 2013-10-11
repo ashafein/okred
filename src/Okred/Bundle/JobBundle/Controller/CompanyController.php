@@ -6,18 +6,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Okred\Bundle\JobBundle\Form;
 use Okred\Bundle\JobBundle\Form\Type;
-use Okred\Bundle\UserBundle\Entity\User;
+use Okred\Bundle\UserBundle\Entity\Company;
 
-class EmployerController extends Controller
+class CompanyController extends Controller
 {
-    public function profileAction()
+    public function viewAction($id)
     {
+        $company = new Company();
+
+
+
         return $this->render(
-            'OkredJobBundle:Employer:profile.html.twig',
+            'OkredJobBundle:Company:view',
             array_merge(
                 $this->getCommonViewParams(),
                 array(
-                    'user' => $this->getUser()
+                    'user' => $this->getUser(),
+                    'company' => "",
                 )
             )
         );

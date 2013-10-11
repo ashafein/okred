@@ -7,8 +7,3 @@ okred_job_employerprofile_view:
     pattern: /view
     defaults:
         _controller: OkredJobBundle:Employer:profile
-
-okred_job_employerprofile_edit:
-    pattern: /edit
-    defaults:
-        _controller: OkredJobBundle:Employer:edit

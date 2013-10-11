@@ -1,0 +1,19 @@
+okred_job_vacancy_index:
+    pattern: /vacancy
+    defaults:
+        _controller: OkredJobBundle:Vacancy:index
+
+okred_job_vacancy_view:
+    pattern: /vacancy/view
+    defaults:
+        _controller: OkredJobBundle:Vacancy:view
+
+okred_job_vacancy_create:
+    pattern: /vacancy/create
+    defaults:
+        _controller: OkredJobBundle:Vacancy:create
+
+okred_job_vacancy_edit:
+    pattern: /vacancy/edit
+    defaults:
+        _controller: OkredJobBundle:Vacancy:edit

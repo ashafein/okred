@@ -19,3 +19,12 @@ okred_job_userprofile:
 okred_job_employerprofile:
     prefix: /eprofile
     resource: "@OkredJobBundle/Resources/config/routing/employer.yml"
+
+okred_job_company:
+    prefix: /eprofile
+    resource: "@OkredJobBundle/Resources/config/routing/company.yml"
+
+okred_job_vacancy:
+    prefix: /eprofile
+    resource: "@OkredJobBundle/Resources/config/routing/vacancy.yml"
+

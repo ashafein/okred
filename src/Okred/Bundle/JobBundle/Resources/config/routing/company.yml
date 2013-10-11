@@ -1,0 +1,19 @@
+okred_job_company_index:
+    pattern: /company
+    defaults:
+        _controller: OkredJobBundle:Company:index
+
+okred_job_company_view:
+    pattern: /company/view
+    defaults:
+        _controller: OkredJobBundle:Company:view
+
+okred_job_company_create:
+    pattern: /company/create
+    defaults:
+        _controller: OkredJobBundle:Company:create
+
+okred_job_company_edit:
+    pattern: /company/edit
+    defaults:
+        _controller: OkredJobBundle:Company:edit
