@@ -20,8 +20,47 @@ user:
     vacancy:
         request: "Мои отклики"
 
-buttons:
-    save: "Сохранить"
+resume:
+    title:      "Желаемая должность"
+    salary:     "Желаемая зарплата"
+    key_skills: "Ключевые навыки"
+    employment:
+        label:    "Занятость"
+        fulltime: "Полная"
+        parttime: "Неполная"
+
+candidate:
+    registration:
+        page_title:              "Информация о соискателе"
+        common_group_title:      "Общая"
+        contact_group_title:     "Контактная информация"
+        preferences_group_title: "Предпочтения"
+    form:
+        gender:
+            label:  "Пол"
+            male:   "Мужской"
+            female: "Женский"
+        birth_date: "День рождения"
+        birth_hide: "Не показывать день рождения"
+        city:       "Город роживания"
+        phone1:     "Телефон №1"
+        phone2:     "Телефон №2"
+        phone3:     "Телефон №3"
+        transfer:
+            label:         "Перезд"
+            impossible:    "Невозможен"
+            possible:      "Возможен"
+            desired:       "Желателен"
+        trip:
+            label:         "Готовность к командировкам"
+            never:         "Не готов"
+            ready:         "Готов"
+            sometimes:     "Иногда можно"
+        time_to_office:
+            label:         "Желательное время в пути до работы"
+            any:           "Не имеет значения"
+            hour:          "Не более часа"
+            hour_and_half: "Не более полутора часов"
 
 form:
     group_name: "Название группы"
@@ -35,3 +74,6 @@ form:
     password_confirmation: "Подтвердите пароль"
     new_password: "Новый пароль"
     new_password_confirmation: "Подтвердите пароль"
+
+buttons:
+    save: "Сохранить"

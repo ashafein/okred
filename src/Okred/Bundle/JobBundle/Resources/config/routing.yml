@@ -3,14 +3,24 @@ okred_job_home:
     defaults:
         _controller: OkredJobBundle:Default:index
 
+okred_job_debug:
+    prefix:  /debug
+    resource: "@OkredJobBundle/Resources/config/routing/debug.yml"
+
 okred_job_about:
     pattern:  /about
     defaults:
         _controller: OkredJobBundle:Default:about
 
-okred_job_debug:
-    prefix:  /debug
-    resource: "@OkredJobBundle/Resources/config/routing/debug.yml"
+okred_job_role_select:
+    pattern: /user/role-select
+    defaults:
+        _controller: OkredJobBundle:User:roleSelect
+
+okred_job_register_candidate:
+    pattern: /register-candidate
+    defaults:
+        _controller: OkredJobBundle:Candidate:register
 
 okred_job_userprofile:
     prefix: /profile

@@ -1,14 +1,11 @@
 {% extends "OkredJobBundle::layout.html.twig" %}
+{% use "OkredJobBundle:Candidate:_common.html.twig" %}
 {% trans_default_domain "OkredJobBundle" %}
 {% set tab = 'responses' %}
 {% block page %}
     <div class="row">
         <div class="col-md-12">
-            {% include "OkredJobBundle:Candidate:_header.html.twig" %}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+            {{ block('profile_header') }}
             <table class="table table-striped space-top-m">
                 <tr>
                     <th>Вакансия</th>
