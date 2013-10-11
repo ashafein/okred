@@ -7,7 +7,11 @@ site:
 
 user:
     profile:
+        personal_info: "Персональные данные"
         full_name:  "ФИО"
+        short_name: "Имя"
+        middle_name: "Отчество"
+        last_name:   "Фамилия"
         email:      "Электронная почта"
         header:     "Профиль пользователя %name%"
         edit:       "Редактировать профиль"
@@ -15,3 +19,19 @@ user:
         change: "Сменить пароль"
     vacancy:
         request: "Мои отклики"
+
+buttons:
+    save: "Сохранить"
+
+form:
+    group_name: "Название группы"
+    username: "Логин"
+    email: "Электронная почта"
+    last_name:   "Фамилия"
+    first_name:  "Имя"
+    middle_name: "Отчество"
+    current_password: "Текущий пароль"
+    password: "Пароль"
+    password_confirmation: "Подтвердите пароль"
+    new_password: "Новый пароль"
+    new_password_confirmation: "Подтвердите пароль"

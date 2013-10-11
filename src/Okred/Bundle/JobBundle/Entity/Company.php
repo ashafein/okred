@@ -108,6 +108,14 @@ class Company
      */
     protected $scope;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="EmployerInfo", inversedBy="companyList")
+     * @ORM\JoinTable(name="employer_company",
+     *    joinColumns={@ORM\JoinColumn(name="company_id", referencedColumnName="id")},
+     *    inverseJoinColumns={@ORM\JoinColumn(name="employer_id", referencedColumnName="id")}
+     * )
+     */
+    private $employer;
 
     /**
      * @var \DateTime

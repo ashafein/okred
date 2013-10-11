@@ -174,6 +174,13 @@ class Vacancy
      */
     private $technology;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="EmployerInfo", inversedBy="vacancyList")
+     * @ORM\JoinColumn(name="employer_id", referencedColumnName="id")
+     */
+    private $employer;
+
     /**
      * @ORM\OneToMany(targetEntity="Response",  mappedBy="vacancy")
      */

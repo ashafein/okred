@@ -15,3 +15,7 @@ okred_job_debug:
 okred_job_userprofile:
     prefix: /profile
     resource: "@OkredJobBundle/Resources/config/routing/candidate.yml"
+
+okred_job_employerprofile:
+    prefix: /eprofile
+    resource: "@OkredJobBundle/Resources/config/routing/employer.yml"

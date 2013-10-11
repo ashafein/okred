@@ -1,8 +1,9 @@
 {% block auth_info -%}
     <div class="auth">
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <a class="btn btn-success btn-xs" href="{{ path('okred_job_userprofile_main') }}">{{ app.user.shortName }}</a>
-            |
+            <a class="btn btn-success btn-xs" href="{{ path('okred_job_userprofile_main') }}">{{ app.user.shortName }} Соискатель</a>
+            <a class="btn btn-success btn-xs" href="{{ path('okred_job_employerprofile_main') }}">{{ app.user.shortName }} Работодатель</a>
+
             <a class="btn btn-info btn-xs"
                href="{{ path('fos_user_security_logout') }}">
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
