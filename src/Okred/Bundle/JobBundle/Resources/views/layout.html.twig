@@ -7,18 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}OKRED.JOB{% endblock %}</title>
-    {% block css %}
-        <link href="{{ asset('/bundles/okredjob/b/dist/css/bootstrap.css') }}" rel="stylesheet">
-        <link href="{{ asset('/bundles/okredjob/css/okred.css') }}" rel="stylesheet">
-    {% endblock %}
-    {% block js %}
-        <!--[if lt IE 9]>
-        <script src="{{ asset('/bundles/okredjob/b/assets/js/html5shiv.js') }}"></script>
-        <script src="{{ asset('/bundles/okredjob/b/assets/js/respond.min.js') }}"></script>
-        <script src="{{ asset('/bundles/okredjob/b/assets/js/jquery.js') }}"></script>
-        <script src="{{ asset('/bundles/okredjob/b/dist/js/bootstrap.min.js') }}"></script>
-        <![endif]-->
-    {% endblock %}
+    {% block css %}{{ block('common_css') }}{% endblock %}
+    {% block js %}{{ block('common_js') }}{% endblock %}
 </head>
 <body>
 {% block container -%}

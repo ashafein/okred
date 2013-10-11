@@ -7,7 +7,6 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\UserBundle\Model\UserInterface;
 
 class UserAdmin extends Admin
 {
@@ -69,7 +68,6 @@ class UserAdmin extends Admin
             ->add('firstname')
             ->add('lastname')
             ->add('middlename')
-            ->add('gender')
             ->add('locale')
             ->add('timezone')
             ->add('phone')
@@ -99,19 +97,6 @@ class UserAdmin extends Admin
             ->add('firstname', null, array('required' => false))
             ->add('lastname', null, array('required' => false))
             ->add('middlename', null, array('required' => false))
-            ->add(
-                'gender',
-                'choice',
-                array(
-                    'choices'            => array(
-                        UserInterface::GENDER_UNKNOWN => 'gender_unknown',
-                        UserInterface::GENDER_FEMALE  => 'gender_female',
-                        UserInterface::GENDER_MAN     => 'gender_male',
-                    ),
-                    'required'           => true,
-                    'translation_domain' => $this->getTranslationDomain()
-                )
-            )
             ->add('locale', 'locale', array('required' => false))
             ->add('timezone', 'timezone', array('required' => false))
             ->add('phone', null, array('required' => false))

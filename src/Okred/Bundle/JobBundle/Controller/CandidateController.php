@@ -13,7 +13,28 @@ class CandidateController extends Controller
 {
     public function registerAction()
     {
-        $form = $this->createForm('okred_job_candidate_form');
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        /** @var User $user */
+        $user = $this->getUser();
+        /** @var CandidateInfo $candidateInfo */
+        $candidateInfo = $em->find('OkredJobBundle:CandidateInfo', $user->getId());
+        if (!$candidateInfo) {
+            $candidateInfo = new CandidateInfo();
+            $candidateInfo->setUser($user);
+        }
+
+        $form = $this->createForm('okred_job_candidate_form', $candidateInfo);
+        $request = $this->getRequest();
+
+        if ($request->isMethod('POST')) {
+            if ($form->handleRequest($request)->isValid()) {
+                $em->persist($candidateInfo);
+                $em->flush();
+                return $this->redirect('/');
+            }
+        }
+
         return $this->render(
             'OkredJobBundle:Candidate:register.html.twig',
             array(

@@ -1,6 +1,25 @@
 {% extends "OkredJobBundle::layout_clean.html.twig" %}
 {% form_theme form 'OkredJobBundle::form_layout.html.twig' %}
 {% trans_default_domain "OkredJobBundle" %}
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var cityElementId = '#{{ form.city.vars.id }}';
+            var citizenElementId = '#{{ form.citizenship.vars.id }}';
+            var permitElementId = '#{{ form.workPermit.vars.id }}';
+            $(cityElementId).select2({
+                width: '100%'
+            });
+            $(citizenElementId).select2({
+                width: '100%'
+            });
+            $(permitElementId).select2({
+                width: '100%'
+            });
+        });
+    </script>
+{% endblock %}
 {% block page %}
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -23,7 +42,7 @@
                 <h4>{{ 'candidate.registration.common_group_title'|trans }}</h4>
                 <div class="form-group">
                     {{ form_label(form.birthDate) }}
-                    {{ form_widget(form.birthDate, {'attr':{'class':'form-control'} }) }}
+                    {{ form_widget(form.birthDate) }}
                     <div>{{ form_errors(form.birthDate) }}</div>
                 </div>
                 <div class="checkbox">
@@ -38,7 +57,9 @@
                 </div>
                 <div class="form-group">
                     {{ form_label(form.city) }}
-                    {{ form_widget(form.city, {'attr':{'class':'form-control'} }) }}
+                    <div>
+                        {{ form_widget(form.city) }}
+                    </div>
                     <div>{{ form_errors(form.city) }}</div>
                 </div>
             </div>
@@ -79,9 +100,20 @@
                 </div>
             </div>
             <div class="reg-block">
-                <button type="submit"
-                        class="btn btn-warning">{{ 'registration.do_register'|trans }}</button>
-                {{ 'registration.and_continue'|trans }}
+                <h4>{{ 'candidate.registration.others_group_title'|trans }}</h4>
+                <div class="form-group">
+                    {{ form_label(form.citizenship) }}
+                    {{ form_widget(form.citizenship) }}
+                    <div>{{ form_errors(form.citizenship) }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.workPermit) }}
+                    {{ form_widget(form.workPermit) }}
+                    <div>{{ form_errors(form.workPermit) }}</div>
+                </div>
+            </div>
+            <div class="reg-block">
+                <button type="submit" class="btn btn-warning">{{ 'button.save'|trans }}</button>
             </div>
             {{ form_end(form) }}
         </div>

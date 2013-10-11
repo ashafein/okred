@@ -18,7 +18,7 @@ okred_job_role_select:
         _controller: OkredJobBundle:User:roleSelect
 
 okred_job_register_candidate:
-    pattern: /register-candidate
+    pattern: /candidate/edit
     defaults:
         _controller: OkredJobBundle:Candidate:register
 

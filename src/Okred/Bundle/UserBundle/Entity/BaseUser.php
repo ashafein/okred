@@ -68,12 +68,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=1, nullable=true)
-     */
-    protected $gender = UserInterface::GENDER_UNKNOWN; // set the default to unknown
-
-    /**
-     * @var string
      * @ORM\Column(type="string", length=8, nullable=true)
      */
     protected $locale;
@@ -112,7 +106,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Sets the creation date
-     *
      * @param \DateTime|null $createdAt
      */
     public function setCreatedAt(\DateTime $createdAt = null)
@@ -131,7 +124,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Sets the last update date
-     *
      * @param \DateTime|null $updatedAt
      */
     public function setUpdatedAt(\DateTime $updatedAt = null)
@@ -168,9 +160,7 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Sets the credentials expiration date
-     *
      * @param \DateTime|null $date
-     *
      * @return \FOS\UserBundle\Model\User|void
      */
     public function setCredentialsExpireAt(\DateTime $date = null)
@@ -189,7 +179,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Sets the user groups
-     *
      * @param array $groups
      */
     public function setGroups($groups)
@@ -201,9 +190,7 @@ abstract class BaseUser extends FOSUser implements UserInterface
 
     /**
      * Sets the two-step verification code
-     *
      * @param string $twoStepVerificationCode
-     *
      * @return string|void
      */
     public function setTwoStepVerificationCode($twoStepVerificationCode)
@@ -282,22 +269,6 @@ abstract class BaseUser extends FOSUser implements UserInterface
     public function setMiddlename($value)
     {
         $this->middlename = $value;
-    }
-
-    /**
-     * @param string $gender
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->gender;
     }
 
     /**

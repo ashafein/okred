@@ -37,6 +37,8 @@ security:
             anonymous:        true
 
     access_control:
+        - { path: ^/candidate/edit$, role: ROLE_USER }
+
         # URL of FOSUserBundle which need to be available to anonymous users
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }

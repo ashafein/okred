@@ -1,6 +1,7 @@
 <?php
 namespace Okred\Bundle\JobBundle\Form\Type;
 
+use DateTime;
 use Okred\Bundle\JobBundle\Entity\CandidateInfo;
 use Okred\Bundle\UserBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
@@ -21,6 +22,7 @@ class CandidateFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $trans = $this->translator;
+        $today = new DateTime('today');
 
         $builder
             ->add(
@@ -29,8 +31,9 @@ class CandidateFormType extends AbstractType
                 array(
                     'label'              => 'candidate.form.gender.label',
                     'choices'            => array(
-                        User::GENDER_MALE   => $trans->trans('candidate.form.gender.male'),
-                        User::GENDER_FEMALE => $trans->trans('candidate.form.gender.female'),
+                        CandidateInfo::GENDER_UNKNOWN => $trans->trans('candidate.form.gender.unknown'),
+                        CandidateInfo::GENDER_MALE    => $trans->trans('candidate.form.gender.male'),
+                        CandidateInfo::GENDER_FEMALE  => $trans->trans('candidate.form.gender.female'),
                     ),
                     'expanded'           => true,
                     'translation_domain' => 'OkredJobBundle',
@@ -41,6 +44,7 @@ class CandidateFormType extends AbstractType
                 'date',
                 array(
                     'label'              => 'candidate.form.birth_date',
+                    'years'              => range(1900, $today->format('Y')),
                     'translation_domain' => 'OkredJobBundle',
                 )
             )
@@ -54,9 +58,12 @@ class CandidateFormType extends AbstractType
             )
             ->add(
                 'city',
-                null,
+                'entity',
                 array(
                     'label'              => 'candidate.form.city',
+                    'class'              => 'OkredJobBundle:City',
+                    'property'           => 'name',
+                    'group_by'           => 'region.name',
                     'translation_domain' => 'OkredJobBundle',
                 )
             )
@@ -129,16 +136,20 @@ class CandidateFormType extends AbstractType
                 )
             )->add(
                 'citizenship',
-                'choice',
+                'entity',
                 array(
-                    'label'              => 'candidate.form.time_to_office.label',
-                    'choices'            => array(
-                        CandidateInfo::TIME_TO_OFFICE_ANY           => 'candidate.form.time_to_office.any',
-                        CandidateInfo::TIME_TO_OFFICE_HOUR          => 'candidate.form.time_to_office.hour',
-                        CandidateInfo::TIME_TO_OFFICE_HOUR_AND_HALF => 'candidate.form.time_to_office.hour_and_half',
-
-                    ),
-                    'expanded'           => true,
+                    'label'              => 'candidate.form.citizenship.label',
+                    'class'              => 'OkredJobBundle:Country',
+                    'property'           => 'name',
+                    'translation_domain' => 'OkredJobBundle',
+                )
+            )->add(
+                'workPermit',
+                'entity',
+                array(
+                    'label'              => 'candidate.form.workpermit.label',
+                    'class'              => 'OkredJobBundle:Country',
+                    'property'           => 'name',
                     'translation_domain' => 'OkredJobBundle',
                 )
             );
