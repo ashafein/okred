@@ -3,6 +3,11 @@ okred_job_home:
     defaults:
         _controller: OkredJobBundle:Default:index
 
+okred_job_about:
+    pattern:  /about
+    defaults:
+        _controller: OkredJobBundle:Default:about
+
 okred_job_debug:
     prefix:  /debug
     resource: "@OkredJobBundle/Resources/config/routing/debug.yml"

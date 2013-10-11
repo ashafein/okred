@@ -1,5 +1,6 @@
 {% trans_default_domain "OkredJobBundle" %}
 {% use "OkredJobBundle::common-blocks.html.twig" %}
+{% set main_section = main_section|default('') %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,10 +32,12 @@
             {{ block('auth_info') }}
             <div class="clearfix"></div>
             <ul class="nav nav-justified">
-                <li class="active"><a href="#">{{ 'site.nav.search'|trans }}</a></li>
+                <li class="{{ main_section == 'search' ? 'active' : '' }}"><a
+                            href="#">{{ 'site.nav.search'|trans }}</a></li>
                 <li><a href="#">{{ 'site.nav.vacancy'|trans }}</a></li>
                 <li><a href="#">{{ 'site.nav.resume'|trans }}</a></li>
-                <li><a href="#">{{ 'site.nav.about'|trans }}</a></li>
+                <li class="{{ main_section == 'about' ? 'active' : '' }}"><a
+                            href="{{ path('okred_job_about') }}">{{ 'site.nav.about'|trans }}</a></li>
             </ul>
         </div>
         {% block page %}{% endblock %}
