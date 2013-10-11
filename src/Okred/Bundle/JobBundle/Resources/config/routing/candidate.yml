@@ -3,6 +3,24 @@ okred_job_userprofile_main:
     defaults:
         _controller: OkredJobBundle:Candidate:responses
 
+okred_job_userprofile_resume:
+    pattern: /resume
+    defaults:
+        _controller: OkredJobBundle:Candidate:resume
+
+okred_job_userprofile_resume_edit:
+    pattern: /resume/edit/{id}
+    requirements:
+        id: \d+
+    defaults:
+        _controller: OkredJobBundle:Candidate:resumeEdit
+        id: 0
+
+okred_job_userprofile_search_history:
+    pattern: /search-history
+    defaults:
+        _controller: OkredJobBundle:Candidate:searchHistory
+
 okred_job_userprofile_view:
     pattern: /view
     defaults:

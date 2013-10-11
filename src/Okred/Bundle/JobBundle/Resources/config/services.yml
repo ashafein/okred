@@ -1,7 +1,16 @@
 parameters:
-#    okred_job.example.class: Okred\Bundle\JobBundle\Example
+    okred_job.form.type.candidate.class: Okred\Bundle\JobBundle\Form\Type\CandidateFormType
+    okred_job.form.type.resume.class: Okred\Bundle\JobBundle\Form\Type\ResumeFormType
 
 services:
-#    okred_job.example:
-#        class: %okred_job.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    okred_job.form.type.candidate:
+        class: %okred_job.form.type.candidate.class%
+        arguments: [ @translator ]
+        tags:
+            - { name: form.type, alias: okred_job_candidate_form }
+
+    okred_job.form.type.resume:
+        class: %okred_job.form.type.resume.class%
+        arguments: [ @translator ]
+        tags:
+            - { name: form.type, alias: okred_job_resume_form }

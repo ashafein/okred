@@ -12,6 +12,18 @@ use Okred\Bundle\UserBundle\Entity\User;
  */
 class CandidateInfo
 {
+    const TRANSFER_IMPOSSIBLE = 0;
+    const TRANSFER_POSSIBLE = 1;
+    const TRANSFER_DESIRED = 2;
+
+    const TRIP_NEVER = 0;
+    const TRIP_READY = 1;
+    const TRIP_SOMETIMES = 2;
+
+    const TIME_TO_OFFICE_ANY = 0;
+    const TIME_TO_OFFICE_HOUR = 1;
+    const TIME_TO_OFFICE_HOUR_AND_HALF = 2;
+
     /**
      * @var User
      * @ORM\OneToOne(targetEntity="Okred\Bundle\UserBundle\Entity\User")
@@ -51,7 +63,7 @@ class CandidateInfo
 
     /**
      * @var Collection
-     * @ORM\ManyToMany(targetEntity="Resume", mappedBy="candidate")
+     * @ORM\OneToMany(targetEntity="Resume", mappedBy="candidate")
      */
     private $resumeList;
 

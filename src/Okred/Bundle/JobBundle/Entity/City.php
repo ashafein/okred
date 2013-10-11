@@ -4,52 +4,36 @@ namespace Okred\Bundle\JobBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * City
- *
  * @ORM\Entity
- * @ORM\Table(name="city")
- *
+ * @ORM\Table(name="geo_city")
  */
 class City
 {
-
     /**
-     * @var integer
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @var int
+     * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue()
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="city", type="string", length=200, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $city;
+    private $name;
 
 
     /**
-     *
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="city")
-     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     * @var Region
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="cities")
      */
-
-    private $country;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Region", inversedBy="city")
-     * @ORM\JoinColumn(name="region_id", referencedColumnName="id")
-     */
-
     private $region;
-
 
 
     /**
      * Get id
-     *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -57,71 +41,34 @@ class City
     }
 
     /**
-     * Set city
-     *
-     * @param string $city
-     * @return City
+     * @return string
      */
-    public function setCity($city)
+    public function getName()
     {
-        $this->city = $city;
-
-        return $this;
+        return $this->name;
     }
 
     /**
-     * Get city
-     *
-     * @return string 
+     * @param string $value
      */
-    public function getCity()
+    public function setName($value)
     {
-        return $this->city;
+        $this->name = $value;
     }
 
     /**
-     * Set regionId
-     *
-     * @param integer $regionId
-     * @return City
+     * @return Region
      */
-    public function setRegionId($regionId)
+    public function getRegion()
     {
-        $this->regionId = $regionId;
-
-        return $this;
+        return $this->region;
     }
 
     /**
-     * Get regionId
-     *
-     * @return integer 
+     * @param Region $value
      */
-    public function getRegionId()
+    public function setRegion(Region $value)
     {
-        return $this->regionId;
-    }
-
-    /**
-     * Set countryId
-     *
-     * @param integer $countryId
-     * @return City
-     */
-    public function setCountryId($countryId)
-    {
-        $this->countryId = $countryId;
-
-        return $this;
-    }
-
-    /**
-     * Get countryId
-     *
-     * @return integer 
-     */
-    public function getCountryId()
-    {
-        return $this->countryId;
+        $this->region = $value;
     }
 }

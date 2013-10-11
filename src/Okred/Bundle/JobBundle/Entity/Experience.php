@@ -1,6 +1,7 @@
 <?php
 namespace Okred\Bundle\JobBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -11,10 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Experience
 {
     /**
-     * @var integer
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var int
+     * @ORM\Column(type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
      */
     private $id;
 
@@ -25,10 +26,22 @@ class Experience
     private $companyName;
 
     /**
-     * @var integer
-     * @ORM\Column(name="city_id", type="integer")
+     * @var string
+     * @ORM\Column(name="position", type="string", length=200, nullable=true)
      */
-    private $cityId;
+    private $position;
+
+    /**
+     * @var DateTime
+     * @ORM\Column(name="start_date", type="datetime", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var DateTime
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     */
+    private $endDate;
 
     /**
      * @var string
@@ -37,78 +50,24 @@ class Experience
     private $website;
 
     /**
-     * @var integer
-     * @ORM\Column(name="scope_id", type="integer")
-     */
-    private $scopeId;
-
-    /**
-     * @var string
-     * @ORM\Column(name="position", type="string", length=200, nullable=true)
-     */
-    private $position;
-
-    /**
-     * @var \DateTime
-     * @ORM\Column(name="start_date", type="datetime", nullable=true)
-     */
-    private $startDate;
-
-    /**
-     * @var \DateTime
-     * @ORM\Column(name="end_date", type="datetime", nullable=true)
-     */
-    private $endDate;
-
-    /**
-     * @var @var integer
-     *
-     * @ORM\Column(name="visible", type="integer", nullable=true)
-     */
-    private $visible;
-
-    /**
+     * @var City
      * @ORM\ManyToOne(targetEntity="City")
-     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     private $city;
 
     /**
+     * @var Scope
      * @ORM\ManyToOne(targetEntity="Scope")
-     * @ORM\JoinColumn(name="scope_id", referencedColumnName="id")
      */
     private $scope;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="Technology")
-     * @ORM\JoinTable(name="experience_technology",
-     * joinColumns={@ORM\JoinColumn(name="experience_id", referencedColumnName="id")},
-     * inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id", unique=true)}
-     * )
-     */
-    private $technologies;
 
     /**
-     * Get id
-     * @return integer
+     * @return int
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set companyName
-     *
-     * @param string $companyName
-     *
-     * @return $this;
-     */
-    public function setCompanyName($companyName)
-    {
-        $this->companyName = $companyName;
-
-        return $this;
     }
 
     /**
@@ -121,90 +80,18 @@ class Experience
     }
 
     /**
-     * Set idCity
-     *
-     * @param integer $idCity
-     *
-     * @return $this
+     * Set companyName
+     * @param string $value
+     * @return $this;
      */
-    public function setIdCity($idCity)
+    public function setCompanyName($value)
     {
-        $this->cityId = $idCity;
+        $this->companyName = $value;
 
         return $this;
     }
 
     /**
-     * Get idCity
-     * @return integer
-     */
-    public function getIdCity()
-    {
-        return $this->cityId;
-    }
-
-    /**
-     * Set website
-     *
-     * @param string $website
-     *
-     * @return $this
-     */
-    public function setWebsite($website)
-    {
-        $this->website = $website;
-
-        return $this;
-    }
-
-    /**
-     * Get website
-     * @return string
-     */
-    public function getWebsite()
-    {
-        return $this->website;
-    }
-
-    /**
-     * Set scopeId
-     *
-     * @param integer $scopeId
-     *
-     * @return $this
-     */
-    public function setScopeId($scopeId)
-    {
-        $this->scopeId = $scopeId;
-
-        return $this;
-    }
-
-    /**
-     * Get scopeId
-     * @return integer
-     */
-    public function getScopeId()
-    {
-        return $this->scopeId;
-    }
-
-    /**
-     * Set position
-     *
-     * @param string $position
-     *
-     * @return $this
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
      * @return string
      */
     public function getPosition()
@@ -213,22 +100,18 @@ class Experience
     }
 
     /**
-     * Set startDate
-     *
-     * @param \DateTime $startDate
-     *
+     * @param string $value
      * @return $this
      */
-    public function setStartDate($startDate)
+    public function setPosition($value)
     {
-        $this->startDate = $startDate;
+        $this->position = $value;
 
         return $this;
     }
 
     /**
-     * Get startDate
-     * @return \DateTime
+     * @return DateTime
      */
     public function getStartDate()
     {
@@ -236,25 +119,83 @@ class Experience
     }
 
     /**
-     * Set endDate
-     *
-     * @param \DateTime $endDate
-     *
+     * @param DateTime $value
      * @return $this
      */
-    public function setEndDate($endDate)
+    public function setStartDate(DateTime $value)
     {
-        $this->endDate = $endDate;
+        $this->startDate = $value;
 
         return $this;
     }
 
     /**
-     * Get endDate
-     * @return \DateTime
+     * @return DateTime
      */
     public function getEndDate()
     {
         return $this->endDate;
+    }
+
+    /**
+     * @param DateTime $value
+     * @return $this
+     */
+    public function setEndDate(DateTime $value)
+    {
+        $this->endDate = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setWebsite($value)
+    {
+        $this->website = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return City
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param City $value
+     */
+    public function setCity($value)
+    {
+        $this->city = $value;
+    }
+
+    /**
+     * @return Scope
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * @param Scope $value
+     */
+    public function setScope(Scope $value)
+    {
+        $this->scope = $value;
     }
 }

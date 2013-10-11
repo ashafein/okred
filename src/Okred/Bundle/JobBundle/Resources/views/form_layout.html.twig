@@ -1,0 +1,11 @@
+{% block choice_widget_expanded %}
+    {% spaceless %}
+        <div {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <div class="checkbox">
+                    <label>{{ form_widget(child) }} {{ child.vars.label|trans({}, child.vars.translation_domain) }}</label>
+                </div>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock choice_widget_expanded %}

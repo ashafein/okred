@@ -1,0 +1,89 @@
+{% extends "OkredJobBundle::layout_clean.html.twig" %}
+{% form_theme form 'OkredJobBundle::form_layout.html.twig' %}
+{% trans_default_domain "OkredJobBundle" %}
+{% block page %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="reg-header">
+                <h1>{{ 'candidate.registration.page_title'|trans }}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            {{ form_start(form, {'attr':{'role':'form'} }) }}
+            {% if form.vars.errors|length > 0 %}
+                <div class="reg-block">
+                    {% for e in form.vars.errors %}
+                        <div>{{ e.message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="reg-block">
+                <h4>{{ 'candidate.registration.common_group_title'|trans }}</h4>
+                <div class="form-group">
+                    {{ form_label(form.birthDate) }}
+                    {{ form_widget(form.birthDate, {'attr':{'class':'form-control'} }) }}
+                    <div>{{ form_errors(form.birthDate) }}</div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        {{ form_widget(form.birthDateHide) }} {{ form.birthDateHide.vars.label|trans }}
+                    </label>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.gender) }}
+                    {{ form_widget(form.gender) }}
+                    <div>{{ form_errors(form.gender) }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.city) }}
+                    {{ form_widget(form.city, {'attr':{'class':'form-control'} }) }}
+                    <div>{{ form_errors(form.city) }}</div>
+                </div>
+            </div>
+            <div class="reg-block">
+                <h4>{{ 'candidate.registration.contact_group_title'|trans }}</h4>
+                <div class="form-group">
+                    {{ form_label(form.phone1) }}
+                    {{ form_widget(form.phone1, {'attr':{'class':'form-control'} }) }}
+                    <div>{{ form_errors(form.phone1) }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.phone2) }}
+                    {{ form_widget(form.phone2, {'attr':{'class':'form-control'} }) }}
+                    <div>{{ form_errors(form.phone2) }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.phone3) }}
+                    {{ form_widget(form.phone3, {'attr':{'class':'form-control'} }) }}
+                    <div>{{ form_errors(form.phone3) }}</div>
+                </div>
+            </div>
+            <div class="reg-block">
+                <h4>{{ 'candidate.registration.preferences_group_title'|trans }}</h4>
+                <div class="form-group">
+                    {{ form_label(form.transfer) }}
+                    {{ form_widget(form.transfer) }}
+                    <div>{{ form_errors(form.transfer) }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.trip) }}
+                    {{ form_widget(form.trip) }}
+                    <div>{{ form_errors(form.trip) }}</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.timeToOffice) }}
+                    {{ form_widget(form.timeToOffice) }}
+                    <div>{{ form_errors(form.timeToOffice) }}</div>
+                </div>
+            </div>
+            <div class="reg-block">
+                <button type="submit"
+                        class="btn btn-warning">{{ 'registration.do_register'|trans }}</button>
+                {{ 'registration.and_continue'|trans }}
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

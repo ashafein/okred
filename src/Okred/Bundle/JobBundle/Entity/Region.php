@@ -1,54 +1,47 @@
 <?php
 namespace Okred\Bundle\JobBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Region
- *
  * @ORM\Entity
- * @ORM\Table(name="region")
- *
+ * @ORM\Table(name="geo_region")
  */
 class Region
 {
     /**
-     * @var integer
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @var int
+     * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue()
      */
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="country_id", type="integer", nullable=false)
-     */
-    private $countryId;
-
-    /**
      * @var string
-     *
-     * @ORM\Column(name="region", type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
-    private $region;
+    private $name;
+
 
     /**
-     * @ORM\OneToMany(targetEntity="City", mappedBy="region")
-     */
-    private $city;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="region")
-     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
+     * @var Region
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="regions")
      */
     private $country;
 
     /**
+     * @var Collection
+     * @ORM\OneToMany(targetEntity="City", mappedBy="region")
+     */
+    private $cities;
+
+
+    /**
      * Get id
-     *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -56,48 +49,50 @@ class Region
     }
 
     /**
-     * Set countryId
-     *
-     * @param integer $countryId
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setName($value)
+    {
+        $this->name = $value;
+    }
+
+    /**
      * @return Region
      */
-    public function setCountryId($countryId)
+    public function getCountry()
     {
-        $this->countryId = $countryId;
-
-        return $this;
+        return $this->country;
     }
 
     /**
-     * Get countryId
-     *
-     * @return integer 
+     * @param Country $value
      */
-    public function getCountryId()
+    public function setCountry(Country $value)
     {
-        return $this->countryId;
+        $this->country = $value;
     }
 
     /**
-     * Set region
-     *
-     * @param string $region
-     * @return Region
+     * @return Collection
      */
-    public function setRegion($region)
+    public function getCities()
     {
-        $this->region = $region;
-
-        return $this;
+        return is_null($this->cities) ? new ArrayCollection() : $this->cities;
     }
 
     /**
-     * Get region
-     *
-     * @return string 
+     * @param Collection $value
      */
-    public function getRegion()
+    public function setCities(Collection $value)
     {
-        return $this->region;
+        $this->cities = $value;
     }
 }

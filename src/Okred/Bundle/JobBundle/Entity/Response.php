@@ -79,15 +79,13 @@ class Response
     protected $vacancy;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Resume",  inversedBy="response")
+     * @ORM\ManyToOne(targetEntity="Resume")
      */
     protected $resume;
 
     /**
      * Set id
-     *
      * @param integer $id
-     *
      * @return Response
      */
     public function setId($id)
@@ -108,9 +106,7 @@ class Response
 
     /**
      * Set vacancyId
-     *
      * @param integer $vacancyId
-     *
      * @return Response
      */
     public function setVacancyId($vacancyId)
@@ -131,9 +127,7 @@ class Response
 
     /**
      * Set resumeId
-     *
      * @param integer $resumeId
-     *
      * @return Response
      */
     public function setResumeId($resumeId)
@@ -154,9 +148,7 @@ class Response
 
     /**
      * Set employerId
-     *
      * @param integer $employerId
-     *
      * @return Response
      */
     public function setEmployerId($employerId)
@@ -177,9 +169,7 @@ class Response
 
     /**
      * Set workmanId
-     *
      * @param integer $workmanId
-     *
      * @return Response
      */
     public function setWorkmanId($workmanId)
@@ -200,9 +190,7 @@ class Response
 
     /**
      * Set approvedByEmployer
-     *
      * @param boolean $approvedByEmployer
-     *
      * @return Response
      */
     public function setApprovedByEmployer($approvedByEmployer)
@@ -223,9 +211,7 @@ class Response
 
     /**
      * Set approvedByWorkman
-     *
      * @param boolean $approvedByWorkman
-     *
      * @return Response
      */
     public function setApprovedByWorkman($approvedByWorkman)
@@ -246,9 +232,7 @@ class Response
 
     /**
      * Set deletedByEmployer
-     *
      * @param boolean $deletedByEmployer
-     *
      * @return Response
      */
     public function setDeletedByEmployer($deletedByEmployer)
@@ -269,9 +253,7 @@ class Response
 
     /**
      * Set deletedByWorkman
-     *
      * @param boolean $deletedByWorkman
-     *
      * @return Response
      */
     public function setDeletedByWorkman($deletedByWorkman)
@@ -292,9 +274,7 @@ class Response
 
     /**
      * Set rejectedByEmployer
-     *
      * @param boolean $rejectedByEmployer
-     *
      * @return Response
      */
     public function setRejectedByEmployer($rejectedByEmployer)
@@ -315,9 +295,7 @@ class Response
 
     /**
      * Set createdAt
-     *
      * @param \DateTime $createdAt
-     *
      * @return Response
      */
     public function setCreatedAt($createdAt)
@@ -338,9 +316,7 @@ class Response
 
     /**
      * Set updatedAt
-     *
      * @param \DateTime $updatedAt
-     *
      * @return Response
      */
     public function setUpdatedAt($updatedAt)

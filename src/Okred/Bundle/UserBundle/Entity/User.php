@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    const GENDER_UNKNOWN = 0;
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 2;
+
     // FOSUser username field hide
     public function setEmail($value)
     {
