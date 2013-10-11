@@ -75,5 +75,17 @@ form:
     new_password: "Новый пароль"
     new_password_confirmation: "Подтвердите пароль"
 
-buttons:
+button:
     save: "Сохранить"
+
+
+company:
+    create: "Создаем Компанию"
+    edit: "Редактируем дынные компании"
+    name: "Название"
+    phone: "Телефон"
+    legalType: "Тип компании"
+    companyType: "Вид Компании"
+    owner: "Владелец"
+    slogan: "Девиз"
+

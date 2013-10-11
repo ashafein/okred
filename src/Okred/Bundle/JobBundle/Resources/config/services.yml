@@ -1,6 +1,7 @@
 parameters:
     okred_job.form.type.candidate.class: Okred\Bundle\JobBundle\Form\Type\CandidateFormType
     okred_job.form.type.resume.class: Okred\Bundle\JobBundle\Form\Type\ResumeFormType
+    okred_job.form.type.company.class: Okred\Bundle\JobBundle\Form\Type\CompanyFormType
 
 services:
     okred_job.form.type.candidate:
@@ -14,3 +15,9 @@ services:
         arguments: [ @translator ]
         tags:
             - { name: form.type, alias: okred_job_resume_form }
+
+    okred_job.form.type.company:
+        class: %okred_job.form.type.company.class%
+        arguments: [ @translator ]
+        tags:
+            - { name: form.type, alias: okred_job_company_form }

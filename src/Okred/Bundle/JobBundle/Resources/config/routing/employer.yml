@@ -3,6 +3,23 @@ okred_job_employerprofile_main:
     defaults:
         _controller: OkredJobBundle:Employer:responses
 
+okred_job_employerprofile_company:
+    pattern: /company
+    defaults:
+        _controller: OkredJobBundle:Employer:comapny
+
+okred_job_employerprofile_company_edit:
+    pattern: /company/edit/{id}
+    requirements:
+    defaults:
+        _controller: OkredJobBundle:Employer:companyEdit
+        id: 0
+
+okred_job_employerprofile_search_history:
+    pattern: /search-history
+    defaults:
+        _controller: OkredJobBundle:Employer:searchHistory
+
 okred_job_employerprofile_view:
     pattern: /view
     defaults:

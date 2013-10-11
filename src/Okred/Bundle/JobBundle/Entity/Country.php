@@ -72,4 +72,34 @@ class Country
     {
         $this->regions = $value;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->regions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add regions
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Region $regions
+     * @return Country
+     */
+    public function addRegion(\Okred\Bundle\JobBundle\Entity\Region $regions)
+    {
+        $this->regions[] = $regions;
+
+        return $this;
+    }
+
+    /**
+     * Remove regions
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Region $regions
+     */
+    public function removeRegion(\Okred\Bundle\JobBundle\Entity\Region $regions)
+    {
+        $this->regions->removeElement($regions);
+    }
 }

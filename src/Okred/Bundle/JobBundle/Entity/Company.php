@@ -15,6 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Company
 {
+    const COMPANY_TYPE1 = 0;
+    const COMPANY_TYPE2 = 1;
     /**
      *
      *
@@ -84,6 +86,9 @@ class Company
 
 
     /**
+     *
+     * @var int
+     * @ORM\Column(type="integer")
      * @ORM\ManyToOne(targetEntity="Okred\Bundle\JobBundle\Entity\CompanyType")
      * @ORM\JoinColumn(name="company_type_id", referencedColumnName="id")
      */
@@ -186,29 +191,6 @@ class Company
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set companyTypeId
-     *
-     * @param integer $companyTypeId
-     * @return Company
-     */
-    public function setCompanyTypeId($companyTypeId)
-    {
-        $this->companyTypeId = $companyTypeId;
-
-        return $this;
-    }
-
-    /**
-     * Get companyTypeId
-     *
-     * @return integer
-     */
-    public function getCompanyTypeId()
-    {
-        return $this->companyTypeId;
     }
 
     /**
@@ -439,5 +421,160 @@ class Company
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->employer = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set OwnerId
+     *
+     * @param integer $ownerId
+     * @return Company
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->OwnerId = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * Get OwnerId
+     *
+     * @return integer 
+     */
+    public function getOwnerId()
+    {
+        return $this->OwnerId;
+    }
+
+    /**
+     * Set companyType
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\CompanyType $companyType
+     * @return Company
+     */
+    public function setCompanyType(\Okred\Bundle\JobBundle\Entity\CompanyType $companyType = null)
+    {
+        $this->companyType = $companyType;
+
+        return $this;
+    }
+
+    /**
+     * Get companyType
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\CompanyType 
+     */
+    public function getCompanyType()
+    {
+        return $this->companyType;
+    }
+
+    /**
+     * Set legalType
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\LegalType $legalType
+     * @return Company
+     */
+    public function setLegalType(\Okred\Bundle\JobBundle\Entity\LegalType $legalType = null)
+    {
+        $this->legalType = $legalType;
+
+        return $this;
+    }
+
+    /**
+     * Get legalType
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\LegalType 
+     */
+    public function getLegalType()
+    {
+        return $this->legalType;
+    }
+
+    /**
+     * Set city
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\City $city
+     * @return Company
+     */
+    public function setCity(\Okred\Bundle\JobBundle\Entity\City $city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\City 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set scope
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Scope $scope
+     * @return Company
+     */
+    public function setScope(\Okred\Bundle\JobBundle\Entity\Scope $scope = null)
+    {
+        $this->scope = $scope;
+
+        return $this;
+    }
+
+    /**
+     * Get scope
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Scope 
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * Add employer
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\EmployerInfo $employer
+     * @return Company
+     */
+    public function addEmployer(\Okred\Bundle\JobBundle\Entity\EmployerInfo $employer)
+    {
+        $this->employer[] = $employer;
+
+        return $this;
+    }
+
+    /**
+     * Remove employer
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\EmployerInfo $employer
+     */
+    public function removeEmployer(\Okred\Bundle\JobBundle\Entity\EmployerInfo $employer)
+    {
+        $this->employer->removeElement($employer);
+    }
+
+    /**
+     * Get employer
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEmployer()
+    {
+        return $this->employer;
     }
 }

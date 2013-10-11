@@ -114,4 +114,126 @@ class CandidateInfo
     {
         $this->resumeList = $value;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->resumeList = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set residenceId
+     *
+     * @param string $residenceId
+     * @return CandidateInfo
+     */
+    public function setResidenceId($residenceId)
+    {
+        $this->residenceId = $residenceId;
+
+        return $this;
+    }
+
+    /**
+     * Get residenceId
+     *
+     * @return string 
+     */
+    public function getResidenceId()
+    {
+        return $this->residenceId;
+    }
+
+    /**
+     * Set citizenshipId
+     *
+     * @param string $citizenshipId
+     * @return CandidateInfo
+     */
+    public function setCitizenshipId($citizenshipId)
+    {
+        $this->citizenshipId = $citizenshipId;
+
+        return $this;
+    }
+
+    /**
+     * Get citizenshipId
+     *
+     * @return string 
+     */
+    public function getCitizenshipId()
+    {
+        return $this->citizenshipId;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     * @return CandidateInfo
+     */
+    public function setCountryId($countryId)
+    {
+        $this->countryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer 
+     */
+    public function getCountryId()
+    {
+        return $this->countryId;
+    }
+
+    /**
+     * Set cityId
+     *
+     * @param integer $cityId
+     * @return CandidateInfo
+     */
+    public function setCityId($cityId)
+    {
+        $this->cityId = $cityId;
+
+        return $this;
+    }
+
+    /**
+     * Get cityId
+     *
+     * @return integer 
+     */
+    public function getCityId()
+    {
+        return $this->cityId;
+    }
+
+    /**
+     * Add resumeList
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Resume $resumeList
+     * @return CandidateInfo
+     */
+    public function addResumeList(\Okred\Bundle\JobBundle\Entity\Resume $resumeList)
+    {
+        $this->resumeList[] = $resumeList;
+
+        return $this;
+    }
+
+    /**
+     * Remove resumeList
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Resume $resumeList
+     */
+    public function removeResumeList(\Okred\Bundle\JobBundle\Entity\Resume $resumeList)
+    {
+        $this->resumeList->removeElement($resumeList);
+    }
 }

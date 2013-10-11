@@ -12,41 +12,8 @@ class CompanyController extends Controller
 {
     public function viewAction($id)
     {
-        $company = new Company();
 
-
-
-        return $this->render(
-            'OkredJobBundle:Company:view',
-            array_merge(
-                $this->getCommonViewParams(),
-                array(
-                    'user' => $this->getUser(),
-                    'company' => "",
-                )
-            )
-        );
     }
 
 
-    public function responsesAction()
-    {
-        return $this->render(
-            'OkredJobBundle:Employer:responses.html.twig',
-            array_merge(
-                $this->getCommonViewParams(),
-                array(
-                    'active_responses' => array()
-                )
-            )
-        );
-    }
-
-    protected function getCommonViewParams()
-    {
-        return array(
-            'active_response_count' => 0,
-            'vacancy_count'          => 0,
-        );
-    }
 }

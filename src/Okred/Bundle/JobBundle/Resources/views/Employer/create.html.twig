@@ -7,7 +7,7 @@
         <div class="col-md-12">
             {{ block('profile_header') }}
             <div class="well space-top-m col-md-8 col-md-offset-2">
-
+                {{ 'company.create'|trans }}
             </div>
             <div class="well col-md-8 col-md-offset-2">
                 {{ form_start(form, {'attr':{'role':'form'} }) }}
@@ -23,12 +23,7 @@
                     {{ form_label(form.companyType) }}
                     {{ form_widget(form.companyType, {'attr':{'class':'form-control'} }) }}
                 </div>
-                <div class="form-group">
-                    <label>Опыт работы</label>
-                    <div>
-                        <button type="button" class="btn btn-success btn-sm">Добавить опыт работы</button>
-                    </div>
-                </div>
+
                 <div class="form-group">
                     {{ form_label(form.slogan) }}
                     {{ form_widget(form.slogan, {'attr':{'class':'form-control', 'style':'height:10em;'} }) }}

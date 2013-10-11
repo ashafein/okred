@@ -1,0 +1,19 @@
+{% block profile_header -%}
+    <h3>{{ app.user.shortName }}</h3>
+    <ul class="nav nav-pills space-top-m">
+        <li class="{{ tab == 'responses' ? 'active' : '' }}">
+            <a href="{{ path('okred_job_employerprofile_main') }}">Мои отклики на вакансии
+                <span class="badge">{{ active_response_count }}</span></a>
+        </li>
+        <li class="{{ tab == 'resume' ? 'active' : '' }}">
+            <a href="{{ path('okred_job_employerprofile_company') }}">Мои компании
+                <span class="badge">{{ vacancy_count }}</span></a>
+        </li>
+        <li class="{{ tab == 'search_history' ? 'active' : '' }}">
+            <a href="{{ path('okred_job_employerprofile_search_history') }}">История поиска</a>
+        </li>
+        <li class="{{ tab == 'profile' ? 'active' : '' }}">
+            <a href="{{ path('okred_job_employerprofile_view') }}">Профиль</a>
+        </li>
+    </ul>
+{%- endblock %}

@@ -539,4 +539,331 @@ class Vacancy
     {
         return $this->updatedAt;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->technology = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->response = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set cityId
+     *
+     * @param integer $cityId
+     * @return Vacancy
+     */
+    public function setCityId($cityId)
+    {
+        $this->cityId = $cityId;
+
+        return $this;
+    }
+
+    /**
+     * Get cityId
+     *
+     * @return integer 
+     */
+    public function getCityId()
+    {
+        return $this->cityId;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     * @return Vacancy
+     */
+    public function setCountryId($countryId)
+    {
+        $this->countryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer 
+     */
+    public function getCountryId()
+    {
+        return $this->countryId;
+    }
+
+    /**
+     * Set experiencedId
+     *
+     * @param integer $experiencedId
+     * @return Vacancy
+     */
+    public function setExperiencedId($experiencedId)
+    {
+        $this->experiencedId = $experiencedId;
+
+        return $this;
+    }
+
+    /**
+     * Get experiencedId
+     *
+     * @return integer 
+     */
+    public function getExperiencedId()
+    {
+        return $this->experiencedId;
+    }
+
+    /**
+     * Set scope
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Scope $scope
+     * @return Vacancy
+     */
+    public function setScope(\Okred\Bundle\JobBundle\Entity\Scope $scope = null)
+    {
+        $this->scope = $scope;
+
+        return $this;
+    }
+
+    /**
+     * Get scope
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Scope 
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * Set currency
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Currency $currency
+     * @return Vacancy
+     */
+    public function setCurrency(\Okred\Bundle\JobBundle\Entity\Currency $currency = null)
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Currency 
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * Set educationLvl
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\EducationLvl $educationLvl
+     * @return Vacancy
+     */
+    public function setEducationLvl(\Okred\Bundle\JobBundle\Entity\EducationLvl $educationLvl = null)
+    {
+        $this->educationLvl = $educationLvl;
+
+        return $this;
+    }
+
+    /**
+     * Get educationLvl
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\EducationLvl 
+     */
+    public function getEducationLvl()
+    {
+        return $this->educationLvl;
+    }
+
+    /**
+     * Set schedule
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Schedule $schedule
+     * @return Vacancy
+     */
+    public function setSchedule(\Okred\Bundle\JobBundle\Entity\Schedule $schedule = null)
+    {
+        $this->schedule = $schedule;
+
+        return $this;
+    }
+
+    /**
+     * Get schedule
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Schedule 
+     */
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
+
+    /**
+     * Set city
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\City $city
+     * @return Vacancy
+     */
+    public function setCity(\Okred\Bundle\JobBundle\Entity\City $city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\City 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set region
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Region $region
+     * @return Vacancy
+     */
+    public function setRegion(\Okred\Bundle\JobBundle\Entity\Region $region = null)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Region 
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * Set country
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Country $country
+     * @return Vacancy
+     */
+    public function setCountry(\Okred\Bundle\JobBundle\Entity\Country $country = null)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Country 
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Add technology
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Technology $technology
+     * @return Vacancy
+     */
+    public function addTechnology(\Okred\Bundle\JobBundle\Entity\Technology $technology)
+    {
+        $this->technology[] = $technology;
+
+        return $this;
+    }
+
+    /**
+     * Remove technology
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Technology $technology
+     */
+    public function removeTechnology(\Okred\Bundle\JobBundle\Entity\Technology $technology)
+    {
+        $this->technology->removeElement($technology);
+    }
+
+    /**
+     * Get technology
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTechnology()
+    {
+        return $this->technology;
+    }
+
+    /**
+     * Set employer
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\EmployerInfo $employer
+     * @return Vacancy
+     */
+    public function setEmployer(\Okred\Bundle\JobBundle\Entity\EmployerInfo $employer = null)
+    {
+        $this->employer = $employer;
+
+        return $this;
+    }
+
+    /**
+     * Get employer
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\EmployerInfo 
+     */
+    public function getEmployer()
+    {
+        return $this->employer;
+    }
+
+    /**
+     * Add response
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Response $response
+     * @return Vacancy
+     */
+    public function addResponse(\Okred\Bundle\JobBundle\Entity\Response $response)
+    {
+        $this->response[] = $response;
+
+        return $this;
+    }
+
+    /**
+     * Remove response
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Response $response
+     */
+    public function removeResponse(\Okred\Bundle\JobBundle\Entity\Response $response)
+    {
+        $this->response->removeElement($response);
+    }
+
+    /**
+     * Get response
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
 }

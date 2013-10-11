@@ -111,4 +111,147 @@ class EmployerInfo
     {
         $this->vacancyList = $value;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->vacancyList = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->companyList = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set residenceId
+     *
+     * @param string $residenceId
+     * @return EmployerInfo
+     */
+    public function setResidenceId($residenceId)
+    {
+        $this->residenceId = $residenceId;
+
+        return $this;
+    }
+
+    /**
+     * Get residenceId
+     *
+     * @return string 
+     */
+    public function getResidenceId()
+    {
+        return $this->residenceId;
+    }
+
+    /**
+     * Set countryId
+     *
+     * @param integer $countryId
+     * @return EmployerInfo
+     */
+    public function setCountryId($countryId)
+    {
+        $this->countryId = $countryId;
+
+        return $this;
+    }
+
+    /**
+     * Get countryId
+     *
+     * @return integer 
+     */
+    public function getCountryId()
+    {
+        return $this->countryId;
+    }
+
+    /**
+     * Set cityId
+     *
+     * @param integer $cityId
+     * @return EmployerInfo
+     */
+    public function setCityId($cityId)
+    {
+        $this->cityId = $cityId;
+
+        return $this;
+    }
+
+    /**
+     * Get cityId
+     *
+     * @return integer 
+     */
+    public function getCityId()
+    {
+        return $this->cityId;
+    }
+
+    /**
+     * Add vacancyList
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Vacancy $vacancyList
+     * @return EmployerInfo
+     */
+    public function addVacancyList(\Okred\Bundle\JobBundle\Entity\Vacancy $vacancyList)
+    {
+        $this->vacancyList[] = $vacancyList;
+
+        return $this;
+    }
+
+    /**
+     * Remove vacancyList
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Vacancy $vacancyList
+     */
+    public function removeVacancyList(\Okred\Bundle\JobBundle\Entity\Vacancy $vacancyList)
+    {
+        $this->vacancyList->removeElement($vacancyList);
+    }
+
+    /**
+     * Add companyList
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Company $companyList
+     * @return EmployerInfo
+     */
+    public function addCompanyList(\Okred\Bundle\JobBundle\Entity\Company $companyList)
+    {
+        $this->companyList[] = $companyList;
+
+        return $this;
+    }
+
+    /**
+     * Remove companyList
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Company $companyList
+     */
+    public function removeCompanyList(\Okred\Bundle\JobBundle\Entity\Company $companyList)
+    {
+        $this->companyList->removeElement($companyList);
+    }
+
+    /**
+     * Get companyList
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCompanyList()
+    {
+        return $this->companyList;
+    }
 }

@@ -95,4 +95,34 @@ class Region
     {
         $this->cities = $value;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cities = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add cities
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\City $cities
+     * @return Region
+     */
+    public function addCity(\Okred\Bundle\JobBundle\Entity\City $cities)
+    {
+        $this->cities[] = $cities;
+
+        return $this;
+    }
+
+    /**
+     * Remove cities
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\City $cities
+     */
+    public function removeCity(\Okred\Bundle\JobBundle\Entity\City $cities)
+    {
+        $this->cities->removeElement($cities);
+    }
 }

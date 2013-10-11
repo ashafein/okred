@@ -219,4 +219,34 @@ class Resume
     {
         $this->experienceItems = $value;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->experienceItems = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add experienceItems
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Experience $experienceItems
+     * @return Resume
+     */
+    public function addExperienceItem(\Okred\Bundle\JobBundle\Entity\Experience $experienceItems)
+    {
+        $this->experienceItems[] = $experienceItems;
+
+        return $this;
+    }
+
+    /**
+     * Remove experienceItems
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Experience $experienceItems
+     */
+    public function removeExperienceItem(\Okred\Bundle\JobBundle\Entity\Experience $experienceItems)
+    {
+        $this->experienceItems->removeElement($experienceItems);
+    }
 }

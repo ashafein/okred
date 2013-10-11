@@ -334,4 +334,50 @@ class Response
     {
         return $this->updatedAt;
     }
+
+    /**
+     * Set vacancy
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Vacancy $vacancy
+     * @return Response
+     */
+    public function setVacancy(\Okred\Bundle\JobBundle\Entity\Vacancy $vacancy = null)
+    {
+        $this->vacancy = $vacancy;
+
+        return $this;
+    }
+
+    /**
+     * Get vacancy
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Vacancy 
+     */
+    public function getVacancy()
+    {
+        return $this->vacancy;
+    }
+
+    /**
+     * Set resume
+     *
+     * @param \Okred\Bundle\JobBundle\Entity\Resume $resume
+     * @return Response
+     */
+    public function setResume(\Okred\Bundle\JobBundle\Entity\Resume $resume = null)
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    /**
+     * Get resume
+     *
+     * @return \Okred\Bundle\JobBundle\Entity\Resume 
+     */
+    public function getResume()
+    {
+        return $this->resume;
+    }
 }

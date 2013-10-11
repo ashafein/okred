@@ -23,4 +23,37 @@ class Portfolio
      * @ORM\Column(name="file_name", type="string", length=1024, nullable=true)
      */
     private $fileName;
+
+    /**
+     * Get portfolioId
+     *
+     * @return integer 
+     */
+    public function getPortfolioId()
+    {
+        return $this->portfolioId;
+    }
+
+    /**
+     * Set fileName
+     *
+     * @param string $fileName
+     * @return Portfolio
+     */
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * Get fileName
+     *
+     * @return string 
+     */
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
 }
