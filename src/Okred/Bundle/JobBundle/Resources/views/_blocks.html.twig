@@ -1,0 +1,39 @@
+{% block common_css %}
+    <link href="{{ asset('/bundles/okredjob/vendor/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('/bundles/okredjob/vendor/select2/select2.css') }}" rel="stylesheet">
+    <link href="{{ asset('/bundles/okredjob/css/okred.css') }}" rel="stylesheet">
+{% endblock %}
+{% block common_js %}
+    <!--[if lt IE 9]>
+    <script src="{{ asset('/bundles/okredjob/vendor/bootstrap/assets/js/html5shiv.js') }}"></script>
+    <script src="{{ asset('/bundles/okredjob/vendor/bootstrap/assets/js/respond.min.js') }}"></script>
+    <![endif]-->
+    <script src="{{ asset('/bundles/okredjob/vendor/bootstrap/assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('/bundles/okredjob/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/bundles/okredjob/vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('/bundles/okredjob/vendor/select2/select2_locale_ru.js') }}"></script>
+{% endblock %}
+{% block auth_info -%}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <div class="auth-logged">
+            <div class="btn-group">
+                <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                    {{ app.user.shortName }}&nbsp;&nbsp;<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('okred_job_userprofile_main') }}">Профиль соискателя</a></li>
+                    <li><a href="{{ path('okred_job_employerprofile_main') }}">Профиль работодателя</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'
+                            |trans({}, 'FOSUserBundle') }}</a></li>
+                </ul>
+            </div>
+        </div>
+    {% else %}
+        <div class="auth">
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            |
+            <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+        </div>
+    {% endif %}
+{%- endblock %}
