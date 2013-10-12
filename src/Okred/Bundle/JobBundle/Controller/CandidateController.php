@@ -3,7 +3,7 @@
 namespace Okred\Bundle\JobBundle\Controller;
 
 use Doctrine\ORM\EntityManager;
-use Okred\Bundle\JobBundle\Entity\CandidateInfo;
+use Okred\Bundle\JobBundle\Entity\CandidateProfile;
 use Okred\Bundle\JobBundle\Entity\Resume;
 use Okred\Bundle\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -17,26 +17,26 @@ class CandidateController extends Controller
         $em = $this->getDoctrine()->getManager();
         /** @var User $user */
         $user = $this->getUser();
-        /** @var CandidateInfo $candidateInfo */
-        $candidateInfo = $em->find('OkredJobBundle:CandidateInfo', $user->getId());
-        if (!$candidateInfo) {
-            $candidateInfo = new CandidateInfo();
-            $candidateInfo->setUser($user);
+        /** @var CandidateProfile $candidateProfile */
+        $candidateProfile = $em->find('OkredJobBundle:CandidateProfile', $user->getId());
+        if (!$candidateProfile) {
+            $candidateProfile = new CandidateProfile();
+            $candidateProfile->setUser($user);
         }
 
-        $form = $this->createForm('okred_job_candidate_form', $candidateInfo);
+        $form = $this->createForm('okred_job_candidate_profile_form', $candidateProfile);
         $request = $this->getRequest();
 
         if ($request->isMethod('POST')) {
             if ($form->handleRequest($request)->isValid()) {
-                $em->persist($candidateInfo);
+                $em->persist($candidateProfile);
                 $em->flush();
                 return $this->redirect('/');
             }
         }
 
         return $this->render(
-            'OkredJobBundle:Candidate:register.html.twig',
+            'OkredJobBundle:Candidate:profile_form.html.twig',
             array(
                 'form' => $form->createView(),
             )
@@ -45,12 +45,22 @@ class CandidateController extends Controller
 
     public function profileAction()
     {
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        /** @var User $user */
+        $user = $this->getUser();
+        $profile = $em->find('OkredJobBundle:CandidateProfile', $user->getId());
+        if (!$profile) {
+            return $this->redirect($this->generateUrl('okred_job_candidate_profile_edit'));
+        }
+
         return $this->render(
             'OkredJobBundle:Candidate:profile.html.twig',
             array_merge(
                 $this->getCommonViewParams(),
                 array(
-                    'user' => $this->getUser()
+                    'user'    => $user,
+                    'profile' => $profile,
                 )
             )
         );
@@ -78,8 +88,8 @@ class CandidateController extends Controller
         } else {
             /** @var User $user */
             $user = $this->getUser();
-            /** @var CandidateInfo $candidate */
-            $candidate = $em->find('OkredJobBundle:CandidateInfo', $user->getId());
+            /** @var CandidateProfile $candidate */
+            $candidate = $em->find('OkredJobBundle:CandidateProfile', $user->getId());
             if (!$candidate) {
                 throw new AccessDeniedHttpException();
             }

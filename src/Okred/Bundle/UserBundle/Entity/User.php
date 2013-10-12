@@ -40,6 +40,6 @@ class User extends BaseUser
 
     public function getFullname()
     {
-        return implode(' ', array_filter(array($this->firstname, $this->lastname, $this->middlename)));
+        return implode(' ', array_filter(array($this->firstname, $this->middlename, $this->lastname)));
     }
 }

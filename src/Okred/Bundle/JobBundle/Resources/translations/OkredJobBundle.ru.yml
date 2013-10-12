@@ -30,6 +30,8 @@ resume:
         parttime: "Неполная"
 
 candidate:
+    profile:
+        _tab_name: "Профиль соискателя"
     registration:
         page_title:              "Информация о соискателе"
         common_group_title:      "Общая"
@@ -42,31 +44,50 @@ candidate:
             unknown: "Не указан"
             male:    "Мужской"
             female:  "Женский"
-        birth_date: "День рождения"
-        birth_hide: "Не показывать день рождения"
-        city:       "Город роживания"
-        phone1:     "Телефон №1"
-        phone2:     "Телефон №2"
-        phone3:     "Телефон №3"
+        birth_date:
+            label:   "День рождения"
+        birth_hide:
+            label:   "Не показывать день рождения"
+            yes:     "скрыт"
+            no:      "виден всем"
+        city:
+            label:   "Город проживания"
+        phone1:
+            label:   "Телефон №1"
+        phone2:
+            label:   "Телефон №2"
+        phone3:
+            label:   "Телефон №3"
+        phones:
+            label:   "Телефоны"
+            none:    "не указаны"
         transfer:
             label:         "Перезд"
             impossible:    "Невозможен"
             possible:      "Возможен"
             desired:       "Желателен"
         trip:
-            label:         "Готовность к командировкам"
+            label:         "Командировки"
             never:         "Не готов"
             ready:         "Готов"
             sometimes:     "Иногда можно"
         time_to_office:
-            label:         "Желательное время в пути до работы"
+            label:         "Время до работы"
             any:           "Не имеет значения"
             hour:          "Не более часа"
             hour_and_half: "Не более полутора часов"
         citizenship:
             label:         "Гражданство"
-        workpermit:
+        work_permit:
             label:         "Разрешение на работу"
+    search:
+        history:
+            _tab_name: "История поиска"
+    resume:
+        _tab_name: "Мои резюме"
+    employer:
+        messages:
+            _tab_name: "Сообщения от работодателя"
 
 form:
     group_name: "Название группы"

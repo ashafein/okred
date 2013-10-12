@@ -1,13 +1,19 @@
 parameters:
-    okred_job.form.type.candidate.class: Okred\Bundle\JobBundle\Form\Type\CandidateFormType
-    okred_job.form.type.resume.class: Okred\Bundle\JobBundle\Form\Type\ResumeFormType
+    okred_job.twig.okred_twig_extension.class: Okred\Bundle\JobBundle\Twig\OkredTwigExtension
+    okred_job.form.type.candidate.class:       Okred\Bundle\JobBundle\Form\Type\CandidateProfileFormType
+    okred_job.form.type.resume.class:          Okred\Bundle\JobBundle\Form\Type\ResumeFormType
 
 services:
+    okred_job.twig.okred_twig_extension:
+        class: %okred_job.twig.okred_twig_extension.class%
+        tags:
+            - { name: twig.extension }
+
     okred_job.form.type.candidate:
         class: %okred_job.form.type.candidate.class%
         arguments: [ @translator ]
         tags:
-            - { name: form.type, alias: okred_job_candidate_form }
+            - { name: form.type, alias: okred_job_candidate_profile_form }
 
     okred_job.form.type.resume:
         class: %okred_job.form.type.resume.class%

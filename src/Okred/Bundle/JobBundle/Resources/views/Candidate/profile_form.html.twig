@@ -39,7 +39,7 @@
                 </div>
             {% endif %}
             <div class="reg-block">
-                <h4>{{ 'candidate.registration.common_group_title'|trans }}</h4>
+                <h4>{{ app.user.fullName }}</h4>
                 <div class="form-group">
                     {{ form_label(form.birthDate) }}
                     {{ form_widget(form.birthDate) }}

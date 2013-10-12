@@ -62,8 +62,8 @@ class Resume
 
 
     /**
-     * @var CandidateInfo
-     * @ORM\ManyToOne(targetEntity="CandidateInfo", inversedBy="resumeList")
+     * @var CandidateProfile
+     * @ORM\ManyToOne(targetEntity="CandidateProfile", inversedBy="resumeList")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
     private $candidate;
@@ -197,9 +197,9 @@ class Resume
     }
 
     /**
-     * @param CandidateInfo $candidate
+     * @param CandidateProfile $candidate
      */
-    public function setCandidate(CandidateInfo $candidate)
+    public function setCandidate(CandidateProfile $candidate)
     {
         $this->candidate = $candidate;
     }

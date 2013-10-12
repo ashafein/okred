@@ -96,9 +96,20 @@
     </target>
 
     <target name="sf:assets:install" hidden="true">
-        <SymfonyConsole command="assets:install">
-            <arg name="env" value="${symfony.environment}"/>
-        </SymfonyConsole>
+        <if>
+            <istrue value="${dev_environment}"/>
+            <then>
+                <SymfonyConsole command="assets:install">
+                    <arg name="env" value="${symfony.environment}"/>
+                    <arg name="symlink"/>
+                </SymfonyConsole>
+            </then>
+            <else>
+                <SymfonyConsole command="assets:install">
+                    <arg name="env" value="${symfony.environment}"/>
+                </SymfonyConsole>
+            </else>
+        </if>
     </target>
 
     <target name="sf:assetic:dump" depends="sf:assets:install" hidden="true">

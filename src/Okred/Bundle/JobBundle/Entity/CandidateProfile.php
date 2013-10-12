@@ -10,9 +10,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="candidate_info")
+ * @ORM\Table(name="candidate_profile")
  */
-class CandidateInfo
+class CandidateProfile
 {
     const GENDER_UNKNOWN = 0;
     const GENDER_FEMALE = 1;
@@ -41,7 +41,7 @@ class CandidateInfo
      * @var int
      * @ORM\Column(type="smallint")
      */
-    private $gender = CandidateInfo::GENDER_UNKNOWN;
+    private $gender = CandidateProfile::GENDER_UNKNOWN;
 
     /**
      * @var bool
