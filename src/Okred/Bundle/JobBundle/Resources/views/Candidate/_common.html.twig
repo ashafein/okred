@@ -1,7 +1,7 @@
 {% trans_default_domain "OkredJobBundle" %}
 {% block profile_header -%}
-    <h3>{{ app.user.shortName }}</h3>
-    <ul class="nav nav-pills space-top-m">
+    <h2>{{ app.user.shortName }}</h2>
+    <ul class="nav nav-tabs space-top-m">
         <li class="{{ tab == 'responses' ? 'active' : '' }}">
             <a href="{{ path('okred_job_userprofile_main') }}">{{ 'candidate.employer.messages._tab_name'|trans }}
                 <span class="badge">{{ active_response_count }}</span></a>
@@ -10,11 +10,11 @@
             <a href="{{ path('okred_job_userprofile_resume') }}">{{ 'candidate.resume._tab_name'|trans }}
                 <span class="badge">{{ resume_count }}</span></a>
         </li>
-        <li class="{{ tab == 'search_history' ? 'active' : '' }}">
-            <a href="{{ path('okred_job_userprofile_search_history') }}">{{ 'candidate.search.history._tab_name'|trans }}</a>
-        </li>
         <li class="{{ tab == 'profile' ? 'active' : '' }}">
             <a href="{{ path('okred_job_userprofile_view') }}">{{ 'candidate.profile._tab_name'|trans }}</a>
+        </li>
+        <li class="{{ tab == 'search_history' ? 'active' : '' }}">
+            <a href="{{ path('okred_job_userprofile_search_history') }}">{{ 'candidate.search.history._tab_name'|trans }}</a>
         </li>
     </ul>
 {%- endblock %}

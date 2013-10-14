@@ -1,11 +1,15 @@
 body {
     padding-top: 20px;
-    background: url('../images/background-y1.jpg') repeat;
+    /*background: url('../images/background-y1.jpg') repeat;*/
 }
 
 
 .space-top-m {
     margin-top: 20px;
+}
+
+.space-top-l {
+    margin-top: 30px;
 }
 
 .red {

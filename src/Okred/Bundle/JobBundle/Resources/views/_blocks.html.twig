@@ -18,7 +18,9 @@
         <div class="auth-logged">
             <div class="btn-group">
                 <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-                    {{ app.user.shortName }}&nbsp;&nbsp;<span class="caret"></span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    {{ app.user.shortName }}
+                    <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="{{ path('okred_job_userprofile_main') }}">Учетная запись</a></li>

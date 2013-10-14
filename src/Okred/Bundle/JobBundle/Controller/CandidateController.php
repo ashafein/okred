@@ -102,7 +102,7 @@ class CandidateController extends Controller
 
         $form = $this->createForm('okred_job_resume_form', $entity);
         return $this->render(
-            'OkredJobBundle:Candidate:resume_edit.html.twig',
+            'OkredJobBundle:Candidate:resume_form.html.twig',
             array_merge(
                 $this->getCommonViewParams(),
                 array(

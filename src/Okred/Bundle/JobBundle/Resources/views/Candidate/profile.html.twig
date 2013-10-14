@@ -6,8 +6,8 @@
     <div class="row">
         <div class="col-md-12">
             {{ block('profile_header') }}
-            <div class="well space-top-m">
-                <h4>Основное</h4>
+            <div class="space-top-m">
+                <h3>Основное</h3>
                 <dl class="dl-horizontal">
                     <dt>{{ 'user.profile.full_name'|trans }}</dt>
                     <dd>{{ user.fullName|default('имя не указано') }}</dd>
@@ -33,7 +33,7 @@
                     <dt>{{ 'candidate.form.work_permit.label'|trans }}</dt>
                     <dd>{{ profile.workPermit.name }}</dd>
                 </dl>
-                <h4>Предпочтения</h4>
+                <h3>Предпочтения</h3>
                 <dl class="dl-horizontal">
                     <dt>{{ 'candidate.form.time_to_office.label'|trans }}</dt>
                     <dd>{{ profile.timeToOffice|map({
@@ -54,7 +54,8 @@
                         })|trans }}</dd>
                 </dl>
                 <div>
-                    <a class="btn btn-default" href="#">{{ 'user.profile.edit'|trans }}</a>
+                    <a class="btn btn-default"
+                       href="{{ path('okred_job_candidate_profile_edit') }}">{{ 'user.profile.edit'|trans }}</a>
                     <a class="btn btn-default" href="#">{{ 'user.password.change'|trans }}</a>
                 </div>
             </div>
