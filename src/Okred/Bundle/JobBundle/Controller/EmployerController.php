@@ -15,7 +15,7 @@ class EmployerController extends Controller
     public function profileAction()
     {
         return $this->render(
-            'OkredJobBundle:Employer:profile.html.twig',
+            'OkredJobBundle:Employer:profile_view.html.twig',
             array_merge(
                 $this->getCommonViewParams(),
                 array(

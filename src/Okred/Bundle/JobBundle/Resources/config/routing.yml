@@ -17,11 +17,6 @@ okred_job_role_select:
     defaults:
         _controller: OkredJobBundle:User:roleSelect
 
-okred_job_candidate_profile_edit:
-    pattern: /candidate/edit
-    defaults:
-        _controller: OkredJobBundle:Candidate:register
-
 okred_job_userprofile:
     prefix: /profile
     resource: "@OkredJobBundle/Resources/config/routing/candidate.yml"

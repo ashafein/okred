@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class CandidateController extends Controller
 {
-    public function registerAction()
+    public function profileEditAction()
     {
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
@@ -31,31 +31,28 @@ class CandidateController extends Controller
             if ($form->handleRequest($request)->isValid()) {
                 $em->persist($candidateProfile);
                 $em->flush();
-                return $this->redirect('/');
+                return $this->redirect($this->generateUrl('okred_job_candidate_profile_view'));
             }
         }
 
         return $this->render(
-            'OkredJobBundle:Candidate:profile_form.html.twig',
+            'OkredJobBundle:Candidate:profile_edit.html.twig',
             array(
                 'form' => $form->createView(),
             )
         );
     }
 
-    public function profileAction()
+    public function profileViewAction()
     {
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
         /** @var User $user */
         $user = $this->getUser();
         $profile = $em->find('OkredJobBundle:CandidateProfile', $user->getId());
-        if (!$profile) {
-            return $this->redirect($this->generateUrl('okred_job_candidate_profile_edit'));
-        }
 
         return $this->render(
-            'OkredJobBundle:Candidate:profile.html.twig',
+            'OkredJobBundle:Candidate:profile_view.html.twig',
             array_merge(
                 $this->getCommonViewParams(),
                 array(
@@ -102,7 +99,7 @@ class CandidateController extends Controller
 
         $form = $this->createForm('okred_job_resume_form', $entity);
         return $this->render(
-            'OkredJobBundle:Candidate:resume_form.html.twig',
+            'OkredJobBundle:Candidate:resume_edit.html.twig',
             array_merge(
                 $this->getCommonViewParams(),
                 array(
